@@ -6,6 +6,7 @@ import {ILogin} from "../types";
 import {ITokens} from "../interfaces/tokens.interface";
 import jwtDecode from "jwt-decode";
 import {IDecoded} from "../interfaces/decoded.interface";
+import {IMe} from "../interfaces/me.interface";
 
 class AuthService {
 
@@ -16,12 +17,12 @@ class AuthService {
         return axiosMyBackendService.post(endpoints.register, user);
     }
 
-    async login(user: ILogin): Promise<void> {
+    async login(user: ILogin): Promise<IMe> {
         const {data} = await axiosMyBackendService.post(endpoints.login, user);
         this.setTokens(data);
         const {_id}:IDecoded = jwtDecode(data.accessToken);
-        const res = await this.me(_id);
-        console.log(res);
+        const {data: me}: AxiosResponse<IMe> = await this.me(_id);
+        return me;
     }
 
    async me(id:string):Promise<AxiosResponse<any>>{

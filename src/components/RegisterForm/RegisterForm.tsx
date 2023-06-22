@@ -7,10 +7,11 @@ const RegisterForm = () => {
 
     const dispatch = useAppDispatch();
 
-    const {register, handleSubmit} = useForm<IRegister>();
+    const {register, handleSubmit, reset} = useForm<IRegister>();
 
     const registerUser: SubmitHandler<IRegister> = async (user) => {
         await dispatch(authActions.register(user));
+        reset();
     };
 
     return (
