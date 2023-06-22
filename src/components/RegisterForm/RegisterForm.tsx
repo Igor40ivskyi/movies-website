@@ -2,16 +2,19 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {IRegister} from "../../interfaces";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
+import {useNavigate} from "react-router-dom";
 
 const RegisterForm = () => {
 
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const {register, handleSubmit, reset} = useForm<IRegister>();
 
     const registerUser: SubmitHandler<IRegister> = async (user) => {
         await dispatch(authActions.register(user));
         reset();
+        navigate('/login');
     };
 
     return (
