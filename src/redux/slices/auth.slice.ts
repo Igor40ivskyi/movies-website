@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IAuth} from "../../interfaces";
+import {IRegister} from "../../interfaces";
 import {AxiosError} from "axios";
 import {authService} from "../../services";
 
@@ -9,7 +9,7 @@ interface IState {
 
 const initialState: IState = {};
 
-const register = createAsyncThunk<void, IAuth>(
+const register = createAsyncThunk<void, IRegister>(
     'authSlice/register',
     async (user, {rejectWithValue}) => {
         try {
