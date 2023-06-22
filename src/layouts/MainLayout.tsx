@@ -4,9 +4,11 @@ import {Header} from "../components/Header/Header";
 const MainLayout = () => {
     return (
         <div>
-            MainLayout
-            <Header/>
-            <Outlet/>
+            <div>
+                MainLayout
+                <Header/>
+                <Outlet/>
+            </div>
         </div>
     );
 };
