@@ -1,6 +1,6 @@
 const baseMyBackendURL = 'http://localhost:5100';
 
-const endpoints = {
+const authEndpoints = {
     register: '/auth/register',
     login: '/auth/login',
     users: '/users',
@@ -8,5 +8,5 @@ const endpoints = {
 
 export {
     baseMyBackendURL,
-    endpoints,
+    authEndpoints,
 };

@@ -1,7 +1,7 @@
 import {IRegister} from "../interfaces";
 import {AxiosResponse} from "axios";
 import {axiosMyBackendService} from "./axios.service";
-import {endpoints} from "../constants";
+import {authEndpoints} from "../constants";
 import {ILogin} from "../types";
 import {ITokens} from "../interfaces/tokens.interface";
 import jwtDecode from "jwt-decode";
@@ -14,11 +14,11 @@ class AuthService {
     private readonly refreshKey = 'refresh';
 
     register(user: IRegister): Promise<AxiosResponse<void>> {
-        return axiosMyBackendService.post(endpoints.register, user);
+        return axiosMyBackendService.post(authEndpoints.register, user);
     }
 
     async login(user: ILogin): Promise<IMe> {
-        const {data} = await axiosMyBackendService.post(endpoints.login, user);
+        const {data} = await axiosMyBackendService.post(authEndpoints.login, user);
         this.setTokens(data);
         const {_id}:IDecoded = jwtDecode(data.accessToken);
         const {data: me}: AxiosResponse<IMe> = await this.me(_id);
@@ -26,7 +26,7 @@ class AuthService {
     }
 
    async me(id:string):Promise<AxiosResponse<any>>{
-       return axiosMyBackendService.get(`${endpoints.users}/${id}`);
+       return axiosMyBackendService.get(`${authEndpoints.users}/${id}`);
    }
 
     private setTokens({accessToken, refreshToken}: ITokens): void {
