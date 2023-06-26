@@ -1,8 +1,11 @@
 import {SubmitHandler, useForm} from "react-hook-form";
+import {useNavigate} from "react-router-dom";
+
 import {IRegister} from "../../interfaces";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
-import {useNavigate} from "react-router-dom";
+import './RegisterForm.css';
+
 
 const RegisterForm = () => {
 
@@ -17,13 +20,15 @@ const RegisterForm = () => {
         navigate('/login');
     };
 
-    return (
-        <form onSubmit={handleSubmit(registerUser)}>
-            <input type="text" placeholder={'name'} {...register('name')}/>
-            <input type="text" placeholder={'email'} {...register('email')}/>
-            <input type="text" placeholder={'password'} {...register('password')}/>
-            <button>register</button>
-        </form>
+    return (<div className={'formWrap'}>
+
+            <form onSubmit={handleSubmit(registerUser)}>
+                <input type="text" placeholder={'name'} {...register('name')}/>
+                <input type="text" placeholder={'email'} {...register('email')}/>
+                <input type="text" placeholder={'password'} {...register('password')}/>
+                <button>register</button>
+            </form>
+        </div>
     );
 };
 
