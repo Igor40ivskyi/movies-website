@@ -36,8 +36,7 @@ const slice = createSlice({
         builder
             .addCase(getMoviesList.fulfilled, (state, action) => {
                 console.log(action.payload);
-                const {results, page} = action.payload;
-                // @ts-ignore
+                const {results} = action.payload;
                 state.movies = results;
             }),
 });
