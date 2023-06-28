@@ -1,5 +1,6 @@
 .moviesListItem{
-
+display: flex;
+    justify-content: center;align-items: center;
 }
 
 .moviesListItem img {
@@ -23,12 +24,24 @@
 
 .upperImage:hover{
     background-color: black;
-    /*opacity: 0.6;*/
-    transition: 1000ms;
+    opacity: 0.2;
+    transition: 300ms;
+    z-index: 1;
 }
 
 .playIcon {
-    color: whitesmoke;
-
-
+    color: red;
+    /*opacity: 0.2;*/
+    position: absolute;
+    z-index: 5;
+    width: 160px;
+    height: 205px;
+    text-align: center;
 }
+
+/*.playIcon:hover {*/
+/*    color: black;*/
+/*    opacity: 0.1;*/
+/*    position: absolute;*/
+/*    !*z-index: 4;*!*/
+/*}*/

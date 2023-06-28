@@ -17,16 +17,20 @@ const MoviesListItem: FC<IProps> = ({movie}) => {
     const fullPoster_path = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
     return (
+        <div>
+
         <div className={'moviesListItem'}>
             <div className={'upperImage'}>
-                <PlayCircleOutlineIcon className={'playIcon'} style={{fontSize:38}}/>
             </div>
+            <PlayCircleOutlineIcon className={'playIcon'} style={{fontSize: 38}}/>
             <div>
                 <img src={fullPoster_path} alt={title}/>
             </div>
+        </div>
             <div className={'title'}>{title}</div>
         </div>
     );
+
 };
 
 export {MoviesListItem};
