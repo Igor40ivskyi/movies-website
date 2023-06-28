@@ -3,6 +3,7 @@ import {FC} from "react";
 import {IMovie} from "../../interfaces/movie.interface";
 import './MoviesListItem.css';
 
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 interface IProps {
     movie: IMovie
@@ -17,10 +18,13 @@ const MoviesListItem: FC<IProps> = ({movie}) => {
 
     return (
         <div className={'moviesListItem'}>
-            <div className={'title'}>{title}</div>
+            <div className={'upperImage'}>
+                <PlayCircleOutlineIcon className={'playIcon'} style={{fontSize:38}}/>
+            </div>
             <div>
                 <img src={fullPoster_path} alt={title}/>
             </div>
+            <div className={'title'}>{title}</div>
         </div>
     );
 };
