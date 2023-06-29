@@ -17,7 +17,6 @@ const register = createAsyncThunk<void, IRegister>(
     'authSlice/register',
     async (user, {rejectWithValue}) => {
         try {
-            console.log(user);
             await authService.register(user);
         } catch (e) {
             const err = e as AxiosError;
@@ -41,7 +40,11 @@ const login = createAsyncThunk<IMe, ILogin>(
 const slice = createSlice({
     name: 'authSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        resetMe: (state, action) => {
+            state.me = null;
+        },
+    },
     extraReducers: builder =>
         builder
             .addCase(login.fulfilled, (state, action) => {

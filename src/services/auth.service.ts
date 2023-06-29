@@ -38,6 +38,11 @@ class AuthService {
         return localStorage.getItem(this.accessKey);
     }
 
+    removeTokens(): void {
+        localStorage.removeItem(this.accessKey);
+        localStorage.removeItem(this.refreshKey);
+    }
+
 
 }
 

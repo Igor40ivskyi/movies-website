@@ -2,12 +2,8 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {ILogin} from "../../types";
 import {useDispatch} from "react-redux";
 import {authActions} from "../../redux";
-import {useAppSelector} from "../../hooks";
 
 const LoginForm = () => {
-
-    const {me} = useAppSelector(state => state.authReducer);
-    console.log(me);
 
     const dispatch = useDispatch();
 

@@ -7,7 +7,7 @@ import {IMovieData} from "../interfaces/movieData.interface";
 class MovieService {
 
     async getMoviesList(page: string): Promise<AxiosResponse<IMovieData>> {
-        return axiosMovieService.get(`${movieEndpoints.movies}?page=${page}`);
+        return axiosMovieService.get(`${movieEndpoints.movies}`,{params:{page, language: 'en-Us'}});
     }
 }
 
