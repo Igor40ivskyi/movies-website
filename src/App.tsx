@@ -1,7 +1,8 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import {MainLayout} from "./layouts";
 import {LoginPage, RegisterPage} from "./pages";
-import {MoviesPage} from "./pages/MoviesPage";
+import {MoviesPage} from "./pages";
+import {NotFoundPage} from "./pages";
 
 const App = () => {
 
@@ -12,8 +13,8 @@ const App = () => {
                 <Route path={'register'} element={<RegisterPage/>}/>
                 <Route path={'login'} element={<LoginPage/>}/>
                 <Route path={'movies'} element={<MoviesPage/>}>
-
                 </Route>
+                    <Route path={'*'} element={<NotFoundPage/>}/>
             </Route>
         </Routes>
     );

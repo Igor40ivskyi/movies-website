@@ -7,18 +7,20 @@ import {IMovieData} from "../../interfaces/movieData.interface";
 interface IState {
     movies: IMovie[];
     page: number;
+    total_pages: number;
 }
 
 const initialState: IState = {
     movies: [],
     page: null,
+    total_pages: null,
 };
 
-const getMoviesList = createAsyncThunk<IMovieData, void>(
+const getMoviesList = createAsyncThunk<IMovieData, { page: string;}>(
     'movieSlice/getMoviesList',
-    async (_, {rejectWithValue}) => {
+    async ({page}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getMoviesList();
+            const {data} = await movieService.getMoviesList(page);
             console.log(data);
             return data;
         } catch (e) {
@@ -36,8 +38,10 @@ const slice = createSlice({
         builder
             .addCase(getMoviesList.fulfilled, (state, action) => {
                 console.log(action.payload);
-                const {results} = action.payload;
+                const {results, page, total_pages} = action.payload;
                 state.movies = results;
+                state.page = page;
+                state.total_pages = total_pages;
             }),
 });
 
