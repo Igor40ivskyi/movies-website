@@ -1,6 +1,6 @@
 import {FC, useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
-import {Container, Pagination, Stack} from '@mui/material';
+import {Container, Pagination} from '@mui/material';
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slices/movie.slice";
@@ -29,10 +29,8 @@ const MoviesList: FC = () => {
             </div>
 
             <Container style={{border: '2px solid red', display: 'flex', justifyContent: 'center'}}>
-                <Stack spacing={2}>
-                    <Pagination shape={"rounded"} variant={"outlined"} sx={{marginY: 2}} count={500} page={+page    }
+                    <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}} count={500} page={+page}
                                 onChange={(_, num) => setQuery({page: `${num}`})}/>
-                </Stack>
             </Container>
 
         </div>
