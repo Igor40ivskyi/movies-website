@@ -4,10 +4,12 @@ import {useDispatch} from "react-redux";
 import {authActions} from "../../redux";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {AuthValidator} from "../../validators/auth.validator";
+import {useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const {register, handleSubmit, reset, formState: {errors}} = useForm<ILogin>({
         mode: 'all',
@@ -17,22 +19,26 @@ const LoginForm = () => {
     const loginUser:SubmitHandler<any> = async (user) => {
         // @ts-ignore
         await dispatch(authActions.login(user));
+        navigate('/movies');
         reset();
     };
 
     return (
-        <div>
+        <div className={'main'}>
 
-            <form onSubmit={handleSubmit(loginUser)}>
-                <input type="text" placeholder={'email'} {...register('email')}/>
-                <input type="text" placeholder={'password'} {...register('password')}/>
-                <button>login</button>
+            <div className={'formWrap'}>
 
-            </form>
+                <form onSubmit={handleSubmit(loginUser)}>
+                    <input type="text" placeholder={'email'} {...register('email')}/>
+                    <input type="text" placeholder={'password'} {...register('password')}/>
+                    <button>login</button>
 
-            <div className={'messageBlock'}>
-                {errors.email && <span>{errors.email.message}</span>}
-                {errors.password && <span>{errors.password.message}</span>}
+                </form>
+
+                <div className={'messageBlock'}>
+                    {errors.email && <span>{errors.email.message}</span>}
+                    {errors.password && <span>{errors.password.message}</span>}
+                </div>
             </div>
         </div>
     );

@@ -28,20 +28,25 @@ const RegisterForm = () => {
     };
 
 
-    return (<div className={'formWrap'}>
+    return (
+        <div className={'main'}>
 
-            <form onSubmit={handleSubmit(registerUser)}>
-                <input type="text" placeholder={'name'} {...register('name')}/>
-                <input type="text" placeholder={'email'} {...register('email')}/>
-                <input type="text" placeholder={'password'} {...register('password')}/>
-                <button>register</button>
-            </form>
+            <div className={'formWrap'}>
 
-            <div className={'messageBlock'}>
-                {errors.name && <span>{errors.name.message}</span>}
-                {errors.email && <span>{errors.email.message}</span>}
-                {errors.password && <span>{errors.password.message}</span>}
+                <form onSubmit={handleSubmit(registerUser)}>
+                    <input type="text" placeholder={'name'} {...register('name')}/>
+                    <input type="text" placeholder={'email'} {...register('email')}/>
+                    <input type="text" placeholder={'password'} {...register('password')}/>
+                    <button>register</button>
+                </form>
+
+                <div className={'messageBlock'}>
+                    {errors.name && <span>{errors.name.message}</span>}
+                    {errors.email && <span>{errors.email.message}</span>}
+                    {errors.password && <span>{errors.password.message}</span>}
+                </div>
             </div>
+
         </div>
     );
 };

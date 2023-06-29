@@ -1,11 +1,13 @@
 import {FC, useEffect} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {Container, Pagination} from '@mui/material';
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slices/movie.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 import './MoviesList.css';
+import jwtDecode from "jwt-decode";
+import {authService} from "../../services";
 
 const MoviesList: FC = () => {
 
@@ -13,11 +15,24 @@ const MoviesList: FC = () => {
 
     const dispatch = useAppDispatch();
     const [query, setQuery] = useSearchParams();
+    const navigate = useNavigate();
 
     const choose = query.get('page');
 
-    useEffect(() => {
-        dispatch(movieActions.getMoviesList({page: choose}));
+    useEffect( () => {
+        const fetchData = async () => {
+            await dispatch(movieActions.getMoviesList({page: choose}));
+
+            try {
+            jwtDecode(authService.getAccessToken());
+
+            }catch (e) {
+                navigate('/login');
+            }
+        };
+
+        fetchData();
+
     }, [choose, dispatch]);
 
     return (

@@ -11,15 +11,21 @@ const Header = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <div className={'header'}>
-            <NavLink to={'register'}>Register</NavLink>
-            <NavLink to={'login'}>Login</NavLink>
-            <NavLink to={'movies'}>Movies</NavLink>
-            <button onClick={()=>{
-                authService.removeTokens();
-                dispatch(authActions.resetMe(1));
-                navigate('/login');
-            } }>logout</button>
+        <div className={'headerWrap'}>
+
+            <div className={'header'}>
+                <NavLink to={'register'}>Register</NavLink>
+                <NavLink to={'login'}>Login</NavLink>
+                {/*<NavLink to={'movies'}>Movies</NavLink>*/}
+
+                <button onClick={() => {
+                    authService.removeTokens();
+                    dispatch(authActions.resetMe(1));
+                    navigate('/login');
+                }}>logout
+                </button>
+
+            </div>
         </div>
     );
 };
