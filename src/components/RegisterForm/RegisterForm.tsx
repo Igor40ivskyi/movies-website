@@ -5,6 +5,8 @@ import {IRegister} from "../../interfaces";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
 import './RegisterForm.css';
+import {joiResolver} from "@hookform/resolvers/joi";
+import {AuthValidator} from "../../validators/auth.validator";
 
 
 const RegisterForm = () => {
@@ -12,13 +14,19 @@ const RegisterForm = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const {register, handleSubmit, reset} = useForm<IRegister>();
+    const {register, handleSubmit, reset, formState: {errors}} = useForm<IRegister>({
+        mode: 'all',
+        resolver: joiResolver(AuthValidator.register)
+    });
+
+    console.log(errors);
 
     const registerUser: SubmitHandler<IRegister> = async (user) => {
         await dispatch(authActions.register(user));
         reset();
         navigate('/login');
     };
+
 
     return (<div className={'formWrap'}>
 
@@ -28,6 +36,12 @@ const RegisterForm = () => {
                 <input type="text" placeholder={'password'} {...register('password')}/>
                 <button>register</button>
             </form>
+
+            <div className={'messageBlock'}>
+                {errors.name && <span>{errors.name.message}</span>}
+                {errors.email && <span>{errors.email.message}</span>}
+                {errors.password && <span>{errors.password.message}</span>}
+            </div>
         </div>
     );
 };

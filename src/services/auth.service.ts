@@ -25,9 +25,9 @@ class AuthService {
         return me;
     }
 
-   async me(id:string):Promise<AxiosResponse<any>>{
-       return axiosMyBackendService.get(`${authEndpoints.users}/${id}`);
-   }
+    async me(id: string): Promise<AxiosResponse<any>> {
+        return axiosMyBackendService.get(`${authEndpoints.users}/${id}`);
+    }
 
     private setTokens({accessToken, refreshToken}: ITokens): void {
         localStorage.setItem(this.accessKey, accessToken);

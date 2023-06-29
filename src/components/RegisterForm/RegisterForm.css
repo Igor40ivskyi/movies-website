@@ -1,3 +1,7 @@
 .formWrap{
     height: 3000px;
 }
+
+.messageBlock span{
+    display: block;
+}

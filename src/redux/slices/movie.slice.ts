@@ -21,7 +21,6 @@ const getMoviesList = createAsyncThunk<IMovieData, { page: string;}>(
     async ({page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getMoviesList(page);
-            console.log(data);
             return data;
         } catch (e) {
             const err = e as AxiosError;
@@ -37,7 +36,6 @@ const slice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getMoviesList.fulfilled, (state, action) => {
-                console.log(action.payload);
                 const {results, page, total_pages} = action.payload;
                 state.movies = results;
                 state.page = page;

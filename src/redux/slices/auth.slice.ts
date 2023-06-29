@@ -49,7 +49,7 @@ const slice = createSlice({
         builder
             .addCase(login.fulfilled, (state, action) => {
                 state.me = action.payload;
-            }),
+            })
 });
 
 const {reducer: authReducer, actions} = slice;
