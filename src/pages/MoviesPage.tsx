@@ -1,9 +1,10 @@
 import {MoviesList} from "../components/MoviesList/MoviesList";
+import {Outlet} from "react-router-dom";
 
 const MoviesPage = () => {
     return (
         <div>
-            <MoviesList/>
+            <Outlet/>
         </div>
     );
 };
