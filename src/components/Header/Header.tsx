@@ -1,15 +1,15 @@
 import {NavLink, useNavigate} from "react-router-dom";
+import jwtDecode from "jwt-decode";
+import {useEffect, useState} from "react";
 
 import './Header.css';
 import {authService} from "../../services";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
-import jwtDecode from "jwt-decode";
-import {useEffect, useState} from "react";
 
 const Header = () => {
 
-    const [state,setState] = useState(null);
+    const [state, setState] = useState<number>(null);
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();

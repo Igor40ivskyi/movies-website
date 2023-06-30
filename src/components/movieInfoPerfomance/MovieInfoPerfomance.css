@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    background: #2f2d2d;
+    height: 1000px;
+    justify-content: space-around;
+}
+
+.infoWrap {
+    display: grid;
+    width: 40%;
+    font-size: 18px;
+    row-gap: 10px;
+}

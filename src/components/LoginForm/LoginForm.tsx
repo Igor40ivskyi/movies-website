@@ -1,14 +1,14 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ILogin} from "../../types";
-import {useDispatch} from "react-redux";
 import {authActions} from "../../redux";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {AuthValidator} from "../../validators/auth.validator";
 import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../hooks";
 
 const LoginForm = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
     const {register, handleSubmit, reset, formState: {errors}} = useForm<ILogin>({
@@ -17,7 +17,6 @@ const LoginForm = () => {
     });
 
     const loginUser:SubmitHandler<any> = async (user) => {
-        // @ts-ignore
         await dispatch(authActions.login(user));
         navigate('/movies');
         reset();
@@ -32,7 +31,6 @@ const LoginForm = () => {
                     <input type="text" placeholder={'email'} {...register('email')}/>
                     <input type="text" placeholder={'password'} {...register('password')}/>
                     <button>login</button>
-
                 </form>
 
                 <div className={'messageBlock'}>
