@@ -9,39 +9,36 @@ display: flex;
 }
 
 .title{
-    width: 200px;
-    min-height: 50px;
-}
-
-.upperImage {
-    height: 205px;
     width: 160px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    font-size: 17px;
 }
 
-.upperImage:hover{
+.imageContainer{
+    width: 160px;
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.imageContainer::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: black;
-    opacity: 0.2;
-    transition: 300ms;
-    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
 }
 
-.playIcon {
-    color: red;
-    /*opacity: 0.2;*/
-    position: absolute;
-    z-index: 5;
-    width: 160px;
-    height: 205px;
-    text-align: center;
-}
+.imageContainer:hover::after {
+    opacity: 0.3;
 
-/*.playIcon:hover {*/
-/*    color: black;*/
-/*    opacity: 0.1;*/
-/*    position: absolute;*/
-/*    !*z-index: 4;*!*/
-/*}*/
+}

@@ -19,20 +19,14 @@ const MoviesList: FC = () => {
 
     const choose = query.get('page');
 
-    useEffect( () => {
-        const fetchData = async () => {
-            await dispatch(movieActions.getMoviesList({page: choose}));
+    useEffect(() => {
+        dispatch(movieActions.getMoviesList({page: choose}));
 
-            try {
+        try {
             jwtDecode(authService.getAccessToken());
-
-            }catch (e) {
-                navigate('/login');
-            }
-        };
-
-        fetchData();
-
+        } catch (e) {
+            navigate('/login');
+        }
     }, [choose, dispatch]);
 
     return (

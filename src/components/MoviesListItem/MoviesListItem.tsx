@@ -10,6 +10,7 @@ interface IProps {
 }
 
 const MoviesListItem: FC<IProps> = ({movie}) => {
+
     const {original_language, title, poster_path,backdrop_path} = movie;
 
     const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
@@ -20,14 +21,13 @@ const MoviesListItem: FC<IProps> = ({movie}) => {
         <div>
 
         <div className={'moviesListItem'}>
-            <div className={'upperImage'}>
-            </div>
-            <PlayCircleOutlineIcon className={'playIcon'} style={{fontSize: 38}}/>
-            <div>
+            <div className={'imageContainer'}>
                 <img src={fullPoster_path} alt={title}/>
             </div>
         </div>
+
             <div className={'title'}>{title}</div>
+
         </div>
     );
 

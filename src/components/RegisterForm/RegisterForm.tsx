@@ -19,8 +19,6 @@ const RegisterForm = () => {
         resolver: joiResolver(AuthValidator.register)
     });
 
-    console.log(errors);
-
     const registerUser: SubmitHandler<IRegister> = async (user) => {
         await dispatch(authActions.register(user));
         reset();

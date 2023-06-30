@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     width: 900px;
     row-gap: 10px;
-    column-gap: 10px;
+    column-gap: 15px;
     justify-content: center;
     align-items: center;
 }
@@ -11,4 +11,5 @@
 .wrap{
     display: flex;
     justify-content: center;
+    margin-top: 80px;
 }

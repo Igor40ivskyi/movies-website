@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .headerWrap {
     display: flex;
     justify-content: center;
@@ -8,17 +13,62 @@
     background-color: #090909;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     width: 80%;
+    position: fixed;
+    z-index: 6;
 }
 
 .header a {
     text-decoration: none;
     font-size: 20px;
-    color: whitesmoke;
-    font-family: Arial;
+    color: black;
+    font-family: Serif;
 }
 
 .header a.active{
     color: #e30505;
 }
+
+.buttonBlock{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authBlock{
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    /*background-color: #2f2d2d;*/
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.authBlock:hover{
+    /*overflow: initial;*/
+    height: 120px;
+}
+
+
+
+.authBlock1 {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Serif;
+    background-color: whitesmoke;
+}
+
+.option:hover{
+    background-color: #909690;
+    color: whitesmoke;
+}
+
+
+
+
