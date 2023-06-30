@@ -4,7 +4,6 @@ import {LoginPage, RegisterPage} from "./pages";
 import {MoviesPage} from "./pages";
 import {NotFoundPage} from "./pages";
 import {AuthRequire} from "./hoc";
-import {MoviesList} from "./components/MoviesList/MoviesList";
 
 const App = () => {
 
