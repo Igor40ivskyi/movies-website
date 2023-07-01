@@ -3,9 +3,9 @@ import {MainLayout} from "./layouts";
 import {LoginPage, RegisterPage} from "./pages";
 import {MoviesPage} from "./pages";
 import {NotFoundPage} from "./pages";
-import {AuthRequire} from "./hoc";
 import {MoviesList} from "./components/MoviesList/MoviesList";
 import {MovieInfo} from "./components/MovieInfo/MovieInfo";
+import {PrivateRoute} from "./utils/router/PrivateRoute";
 
 const App = () => {
 
@@ -15,10 +15,14 @@ const App = () => {
                 <Route index element={<Navigate to={'register'}/>}/>
                 <Route path={'register'} element={<RegisterPage/>}/>
                 <Route path={'login'} element={<LoginPage/>}/>
-                <Route path={'movies'} element={<MoviesPage/>}>
-                    <Route index element={<AuthRequire><MoviesList/></AuthRequire>}/>
-                    <Route path={'info'} element={<AuthRequire><MovieInfo/></AuthRequire>}/>
+
+                <Route path="movies" element={<PrivateRoute/>}>
+                    <Route path={''} element={<MoviesPage/>}>
+                        <Route index element={<MoviesList/>}/>
+                        <Route path={'info'} element={<MovieInfo/>}/>
+                    </Route>
                 </Route>
+
                 <Route path={'*'} element={<NotFoundPage/>}/>
             </Route>
         </Routes>
