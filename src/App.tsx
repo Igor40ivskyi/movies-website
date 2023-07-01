@@ -18,7 +18,6 @@ const App = () => {
                 <Route path={'movies'} element={<MoviesPage/>}>
                     <Route index element={<AuthRequire><MoviesList/></AuthRequire>}/>
                     <Route path={'info'} element={<AuthRequire><MovieInfo/></AuthRequire>}/>
-
                 </Route>
                 <Route path={'*'} element={<NotFoundPage/>}/>
             </Route>
