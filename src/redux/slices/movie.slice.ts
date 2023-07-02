@@ -5,6 +5,7 @@ import {AxiosError} from "axios";
 import {IMovieData} from "../../interfaces/movieData.interface";
 import {IMovieInfo} from "../../interfaces/movieInfo.interface";
 import {ITrailer} from "../../interfaces/trailer.interface";
+import {IGenre} from "../../interfaces/genre.interface";
 
 interface IState {
     movies: IMovie[];
@@ -12,6 +13,11 @@ interface IState {
     total_pages: number;
     movieInfo: IMovieInfo;
     trailer: ITrailer;
+    genresList: IGenre[];
+    pageByGenre: number;
+    total_pagesByGenre: number;
+    moviesByGenre: IMovie[];
+
 }
 
 const initialState: IState = {
@@ -20,6 +26,10 @@ const initialState: IState = {
     total_pages: null,
     movieInfo: null,
     trailer:null,
+    genresList:[],
+    pageByGenre: null,
+    total_pagesByGenre: null,
+    moviesByGenre: [],
 };
 
 const getMoviesList = createAsyncThunk<IMovieData, { page: string;}>(
@@ -27,7 +37,7 @@ const getMoviesList = createAsyncThunk<IMovieData, { page: string;}>(
     async ({page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getMoviesList(page);
-            return data;
+            return data
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);
@@ -63,6 +73,32 @@ const getVideoTrailer = createAsyncThunk<ITrailer, number>(
     }
 );
 
+const getGenresList = createAsyncThunk<IGenre[], undefined>(
+    'movieSlice/getGenresList',
+    async (_, {rejectWithValue}) => {
+        try {
+            const {data:{genres}} = await movieService.getGenresList();
+            return genres;
+        } catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data);
+        }
+    }
+);
+
+const getMoviesListByGenreId = createAsyncThunk<IMovieData,string>(
+    'movieSlice/getMoviesListByGenreId',
+    async (id, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getMoviesByGenreId(id);
+            return data;
+        }catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data);
+        }
+    }
+);
+
 const slice = createSlice({
     name: 'movieSlice',
     initialState,
@@ -80,6 +116,16 @@ const slice = createSlice({
             })
             .addCase(getVideoTrailer.fulfilled, (state, action) => {
                 state.trailer = action.payload;
+            })
+            .addCase(getGenresList.fulfilled, (state, action) => {
+                state.genresList = action.payload;
+            })
+            .addCase(getMoviesListByGenreId.fulfilled, (state, action) => {
+                const {results, page, total_pages} = action.payload;
+
+                state.moviesByGenre = results;
+                state.pageByGenre = page;
+                state.total_pagesByGenre = total_pages;
             }),
 });
 
@@ -90,6 +136,8 @@ const movieActions = {
     getMoviesList,
     getMovieInfo,
     getVideoTrailer,
+    getGenresList,
+    getMoviesListByGenreId
 };
 
 export {

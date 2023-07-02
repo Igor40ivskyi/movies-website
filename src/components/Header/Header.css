@@ -17,7 +17,7 @@
     width: 80%;
     position: fixed;
     z-index: 6;
-    opacity: 0.96;
+    opacity: 1;
 }
 
 .header a {
@@ -68,23 +68,5 @@
 .option:hover{
     background-color: #909690;
     color: whitesmoke;
-}
-
-.genresBlock {
-    background: silver;
-    height: 40px;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-
-}
-
-.genresBlock:hover {
-    min-height: 40px;
-    overflow: initial;
-}
-
-.genresBlock div{
-    height: 40px;
 }
 

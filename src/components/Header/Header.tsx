@@ -6,6 +6,7 @@ import './Header.css';
 import {authService} from "../../services";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
+import {Genres} from "../GenresList/Genres";
 
 const Header = () => {
 
@@ -41,15 +42,7 @@ const Header = () => {
 
                 {state && <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
 
-                <div className={'genresBlock'}>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                    <div>XXXXX</div>
-                </div>
+                <Genres/>
 
                 <div className={'buttonBlock'}>
                     <button onClick={() => {

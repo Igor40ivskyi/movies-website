@@ -18,6 +18,14 @@ class MovieService {
         return axiosMovieService.get(`${movieEndpoints.movieInfo}/${id}/videos`);
     }
 
+    async getGenresList():Promise<AxiosResponse> {
+        return axiosMovieService.get(movieEndpoints.genresList, {params: {language: 'en'}});
+    }
+
+    async getMoviesByGenreId(id: string): Promise<AxiosResponse> {
+        return axiosMovieService.get(movieEndpoints.movies, {params: {with_genres: id, language: 'en-US'}});
+    }
+
 }
 
 export const movieService = new MovieService();
