@@ -7,16 +7,20 @@ import {Container, Pagination} from "@mui/material";
 
 const MoviesListByGenre = () => {
 
-    const {moviesByGenre, pageByGenre} = useAppSelector(state => state.movieReducer);
+    const {moviesByGenre, pageByGenre, total_pagesByGenre} = useAppSelector(state => state.movieReducer);
+
+    console.log(total_pagesByGenre);
 
     const [params,setParams] = useSearchParams();
     const dispatch = useAppDispatch();
 
     const genreId = params.get('genreId');
+    const page = params.get('page');
+
 
     useEffect(() => {
-        dispatch(movieActions.getMoviesListByGenreId(genreId))
-    }, [genreId]);
+        dispatch(movieActions.getMoviesListByGenreId({genreId, page}));
+    }, [genreId,page]);
 
 
     return (
@@ -28,8 +32,9 @@ const MoviesListByGenre = () => {
             </div>
 
             <Container style={{display: 'flex', justifyContent: 'center'}}>
-                <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}} count={500} page={+pageByGenre}
-                            onChange={(_, num) => setParams(prev=>({genre_id: genreId,page: `${num}`}))}/>
+                <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}}
+                            count={total_pagesByGenre < 500 ? total_pagesByGenre : 500} page={+pageByGenre}
+                            onChange={(_, num) => setParams(prev => ({genreId: genreId, page: `${num}`}))}/>
             </Container>
 
         </div>

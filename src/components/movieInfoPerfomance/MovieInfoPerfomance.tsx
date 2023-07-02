@@ -20,7 +20,7 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
 
     return (
         <div className={'main'}>
-            {trailer && <YouTube videoId={trailer.results[0].key}/>}
+            {trailer?.results[0] && <YouTube videoId={trailer.results[0].key}/>}
             {<div className={'infoWrap'}>
                 <div>title: {title}</div>
                 <div>overview: {overview}</div>

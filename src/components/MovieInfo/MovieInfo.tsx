@@ -14,8 +14,6 @@ const MovieInfo = () => {
 
     const dispatch = useAppDispatch();
 
-    console.log(movieInfo);
-
     useEffect(() => {
         dispatch(movieActions.getMovieInfo(id));
         dispatch(movieActions.getVideoTrailer(id));

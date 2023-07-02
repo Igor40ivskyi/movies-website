@@ -10,7 +10,7 @@ interface IProps {
 
 const MoviesListItem: FC<IProps> = ({movie}) => {
 
-    const {original_language, title, poster_path, id} = movie;
+    const {title, poster_path, id} = movie;
 
     const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
     const fullPoster_path = `${FirstHalfOfPoster}${poster_path}`;
@@ -20,7 +20,7 @@ const MoviesListItem: FC<IProps> = ({movie}) => {
     return (
         <div>
 
-            <div onClick={() => navigate('info',{state:{id}})} className={'moviesListItem'}>
+            <div onClick={() => navigate('/movies/info',{state:{id}})} className={'moviesListItem'}>
                 <div className={'imageContainer'}>
                     <img src={fullPoster_path} alt={title}/>
                 </div>

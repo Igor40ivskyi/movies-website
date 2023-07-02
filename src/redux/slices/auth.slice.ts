@@ -6,7 +6,7 @@ import {IMe} from "../../interfaces/me.interface";
 import {ILogin} from "../../types";
 
 interface IState {
-    me: IMe;
+    me: IMe | string;
 }
 
 const initialState: IState = {
@@ -43,6 +43,9 @@ const slice = createSlice({
     reducers: {
         resetMe: (state, action) => {
             state.me = null;
+        },
+        setMe: (state, action) => {
+            state.me = action.payload;
         },
     },
     extraReducers: builder =>

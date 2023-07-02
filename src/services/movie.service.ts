@@ -22,8 +22,8 @@ class MovieService {
         return axiosMovieService.get(movieEndpoints.genresList, {params: {language: 'en'}});
     }
 
-    async getMoviesByGenreId(id: string): Promise<AxiosResponse> {
-        return axiosMovieService.get(movieEndpoints.movies, {params: {with_genres: id, language: 'en-US'}});
+    async getMoviesByGenreId(id: string,page:string): Promise<AxiosResponse> {
+        return axiosMovieService.get(movieEndpoints.movies, {params: {with_genres: id,page, language: 'en-US'}});
     }
 
 }
