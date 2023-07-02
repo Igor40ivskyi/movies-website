@@ -26,7 +26,6 @@ const Header = () => {
     }, [accessToken]);
 
 
-
     return (
         <div className={'headerWrap'}>
 
@@ -36,11 +35,21 @@ const Header = () => {
                     <div className={'authBlock1'}>
                         AUTH
                     </div>
-                        <NavLink className={'authBlock1 option'} to={'register'}>Register</NavLink>
-                        <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>
+                    <NavLink className={'authBlock1 option'} to={'register'}>Register</NavLink>
+                    <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>
                 </div>
 
-                {state&& <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
+                {state && <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
+
+                <div className={'genresBlock'}>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                    <div>XXXXX</div>
+                </div>
 
                 <div className={'buttonBlock'}>
                     <button onClick={() => {
