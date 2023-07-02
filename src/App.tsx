@@ -7,6 +7,7 @@ import {MoviesList} from "./components/MoviesList/MoviesList";
 import {MovieInfo} from "./components/MovieInfo/MovieInfo";
 import {PrivateRoute} from "./utils/router/PrivateRoute";
 import {MoviesListByGenre} from "./components/MoviesListByGenre/MoviesListByGenre";
+import {FindMovies} from "./components/FindMovies/FindMovies";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
                         <Route index element={<MoviesList/>}/>
                         <Route path={'info'} element={<MovieInfo/>}/>
                         <Route path={'by-genre'} element={<MoviesListByGenre/>}/>
+                        <Route path={'find'} element={<FindMovies/>}/>
                     </Route>
                 </Route>
 

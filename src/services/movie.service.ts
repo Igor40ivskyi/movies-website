@@ -26,6 +26,10 @@ class MovieService {
         return axiosMovieService.get(movieEndpoints.movies, {params: {with_genres: id,page, language: 'en-US'}});
     }
 
+    getSortedMoviesList(sortParams: any): Promise<AxiosResponse> {
+        return axiosMovieService.get(movieEndpoints.movies, {params: {primary_release_year: 1980,sort_by:null}})
+    }
+
 }
 
 export const movieService = new MovieService();
