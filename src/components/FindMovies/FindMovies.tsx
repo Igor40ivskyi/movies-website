@@ -2,11 +2,9 @@ import {SubmitHandler, useForm} from "react-hook-form";
 
 import './FindMovies.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {movieActions} from "../../redux/slices/movie.slice";
 import {findMoviesActions} from "../../redux/slices/findMovies.slice";
 import {IMoviesSortParams} from "../../interfaces/moviesSortParams.interface";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
-import {Container, Pagination} from "@mui/material";
 
 const FindMovies = () => {
 
