@@ -99,13 +99,6 @@ const getMoviesListByGenreId = createAsyncThunk<IMovieData,{genreId:string, page
     }
 );
 
-const getSortedMoviesList = createAsyncThunk<any,any>(
-    'movieSlice/getSortedMoviesList',
-    async (sortParams, {rejectWithValue}) => {
-        const res = await movieService.getSortedMoviesList(sortParams);
-        console.log(res);
-    }
-);
 
 const slice = createSlice({
     name: 'movieSlice',
@@ -146,7 +139,6 @@ const movieActions = {
     getVideoTrailer,
     getGenresList,
     getMoviesListByGenreId,
-    getSortedMoviesList
 };
 
 export {

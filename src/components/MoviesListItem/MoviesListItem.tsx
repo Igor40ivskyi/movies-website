@@ -13,7 +13,11 @@ const MoviesListItem: FC<IProps> = ({movie}) => {
     const {title, poster_path, id} = movie;
 
     const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
-    const fullPoster_path = `${FirstHalfOfPoster}${poster_path}`;
+    let fullPoster_path = `${FirstHalfOfPoster}${poster_path}`;
+
+    if (!poster_path) {
+        fullPoster_path = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
+    }
 
     const navigate = useNavigate();
 

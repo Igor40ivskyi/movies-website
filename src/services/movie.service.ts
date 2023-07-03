@@ -3,6 +3,7 @@ import {AxiosResponse} from "axios";
 import {axiosMovieService} from "./axiosMovie.service";
 import {movieEndpoints} from "../constants/movie.urls";
 import {IMovieData} from "../interfaces/movieData.interface";
+import {IMoviesSortParams} from "../interfaces/moviesSortParams.interface";
 
 class MovieService {
 
@@ -26,8 +27,9 @@ class MovieService {
         return axiosMovieService.get(movieEndpoints.movies, {params: {with_genres: id,page, language: 'en-US'}});
     }
 
-    getSortedMoviesList(sortParams: any): Promise<AxiosResponse> {
-        return axiosMovieService.get(movieEndpoints.movies, {params: {primary_release_year: 1980,sort_by:null}})
+    getSortedMoviesList(sortParams: IMoviesSortParams): Promise<AxiosResponse> {
+        console.log(sortParams);
+        return axiosMovieService.get(movieEndpoints.movies, {params: {...sortParams}});
     }
 
 }

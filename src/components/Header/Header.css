@@ -70,3 +70,11 @@
     color: whitesmoke;
 }
 
+.find {
+    height: 40px;
+    background-color: silver;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

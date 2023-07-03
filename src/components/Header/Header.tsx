@@ -45,6 +45,8 @@ const Header = () => {
                     <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>
                 </div>
 
+                <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
+
                 {state && <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
 
                 <Genres/>
