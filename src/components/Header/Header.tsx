@@ -9,6 +9,7 @@ import {authActions} from "../../redux";
 import {GenresList} from "../GenresList/GenresList";
 import {ShowMe} from "../ShowMe/ShowMe";
 import {ShowAuth} from "../ShowAuth/ShowAuth";
+import {ShowMovies} from "../ShowMovies/ShowMovies";
 
 const Header = () => {
 
@@ -40,17 +41,10 @@ const Header = () => {
 
 
                 <ShowAuth/>
-                {/*<div className={'authBlock'}>*/}
-                {/*    <div className={'authBlock1'}>*/}
-                {/*        AUTH*/}
-                {/*    </div>*/}
-                {/*    <NavLink className={'authBlock1 option'} to={'register'}>Register</NavLink>*/}
-                {/*    <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>*/}
-                {/*</div>*/}
 
                 <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
 
-                {state && <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
+                <ShowMovies/>
 
                 <GenresList/>
 

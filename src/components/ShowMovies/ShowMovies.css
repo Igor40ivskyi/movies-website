@@ -1,0 +1,41 @@
+.categoriesContainer{
+    position: relative;
+}
+
+.categoriesContainer:hover {
+    background-color: whitesmoke;
+}
+
+.categoriesContainer:hover .moviesLabel{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.categoriesContainer:hover .moviesCategories{
+    display: block;
+}
+
+.moviesLabel {
+    height: 50px;
+    width: 120px;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+}
+
+.moviesCategories>a {
+    display: block;
+    padding: 15px 20px;
+    width: 170px;
+}
+
+.moviesCategories {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: whitesmoke;
+    display: none;
+}

@@ -4,7 +4,12 @@
     position: relative;
 }
 
-.authContainer:hover .authlist{
+.authContainer:hover .authLabel{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.authContainer:hover .authlist {
     display: block;
 }
 
@@ -19,13 +24,7 @@
     font-family: sans-serif;
 }
 
-.authLabel:hover{
-    background-color: whitesmoke;
-    color: black;
-}
-
 .authlist {
-    height: 160px;
     width: 200px;
     background-color: whitesmoke;
     top: 0;
