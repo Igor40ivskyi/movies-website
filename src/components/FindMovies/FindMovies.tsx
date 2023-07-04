@@ -1,17 +1,14 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 
-import './FindMovies.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {findMoviesActions} from "../../redux/slices/findMovies.slice";
 import {IMoviesSortParams} from "../../interfaces/moviesSortParams.interface";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
+import './FindMovies.css';
 
 const FindMovies = () => {
 
     const {sortedMoviesList} = useAppSelector(state => state.findMoviesReducer);
-
-    console.log(sortedMoviesList);
-
 
     const dispatch = useAppDispatch();
 
