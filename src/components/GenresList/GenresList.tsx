@@ -1,10 +1,10 @@
-import './Genres.css';
+import './GenresList.css';
 import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slices/movie.slice";
 import {useNavigate} from "react-router-dom";
 
-const Genres = () => {
+const GenresList = () => {
 
     const {genresList} = useAppSelector(state => state.movieReducer);
 
@@ -29,4 +29,4 @@ const Genres = () => {
     );
 };
 
-export {Genres};
+export {GenresList};

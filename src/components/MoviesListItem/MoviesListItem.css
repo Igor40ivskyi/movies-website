@@ -1,26 +1,28 @@
-.moviesListItem{
-display: flex;
-    justify-content: center;align-items: center;
+.moviesListItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .moviesListItem img {
-    width: 160px;
-    height: 205px;
+    width: 175px;
+    height: 240px;
 }
 
 .title{
-    width: 160px;
-    height: 50px;
+    width: 175px;
+    height: 29px;
     box-sizing: border-box;
     padding: 5px;
     margin-bottom: 10px;
     overflow: hidden;
-    font-size: 17px;
+    font-size: 19px;
+    font-family: Serif;
 }
 
 .imageContainer{
-    width: 160px;
-    height: 205px;
+    width: 175px;
+    height: 240px;
     position: relative;
     overflow: hidden;
 }

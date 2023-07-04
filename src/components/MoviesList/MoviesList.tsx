@@ -38,7 +38,7 @@ const MoviesList: FC = () => {
             </div>
 
             <Container style={{display: 'flex', justifyContent: 'center'}}>
-                    <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}} count={500} page={+page}
+                    <Pagination size={"large"} color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}} count={500} page={+page}
                                 onChange={(_, num) => setQuery({page: `${num}`})}/>
             </Container>
 

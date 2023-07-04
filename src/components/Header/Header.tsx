@@ -6,8 +6,9 @@ import './Header.css';
 import {authService} from "../../services";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {authActions} from "../../redux";
-import {Genres} from "../GenresList/Genres";
+import {GenresList} from "../GenresList/GenresList";
 import {ShowMe} from "../ShowMe/ShowMe";
+import {ShowAuth} from "../ShowAuth/ShowAuth";
 
 const Header = () => {
 
@@ -37,19 +38,21 @@ const Header = () => {
 
             <div className={'header'}>
 
-                <div className={'authBlock'}>
-                    <div className={'authBlock1'}>
-                        AUTH
-                    </div>
-                    <NavLink className={'authBlock1 option'} to={'register'}>Register</NavLink>
-                    <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>
-                </div>
+
+                <ShowAuth/>
+                {/*<div className={'authBlock'}>*/}
+                {/*    <div className={'authBlock1'}>*/}
+                {/*        AUTH*/}
+                {/*    </div>*/}
+                {/*    <NavLink className={'authBlock1 option'} to={'register'}>Register</NavLink>*/}
+                {/*    <NavLink className={'authBlock1 option'} to={'login'}>Login</NavLink>*/}
+                {/*</div>*/}
 
                 <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
 
                 {state && <NavLink className={'authBlock1 option'} to={'movies'}>Movies</NavLink>}
 
-                <Genres/>
+                <GenresList/>
 
                 <ShowMe/>
                 {/*<div className={'showMe'}>{userName}</div>*/}
