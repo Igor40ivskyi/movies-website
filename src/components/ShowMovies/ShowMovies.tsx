@@ -6,10 +6,11 @@ const ShowMovies = () => {
         <div className={'categoriesContainer'}>
             <div className={'moviesLabel'}>Movies</div>
             <div className={'moviesCategories'}>
-                <NavLink to={'popular'}>Popular</NavLink>
-                <NavLink to={'top-rated'}>Top rated</NavLink>
-                <NavLink to={'upcoming'}>Upcoming</NavLink>
-                <NavLink to={'now-playing'}>Now playing</NavLink>
+                <NavLink to={'movies'}>common</NavLink>
+                <NavLink to={'/movies/popular'}>Popular</NavLink>
+                <NavLink to={'/movies/top-rated'}>Top rated</NavLink>
+                <NavLink to={'/movies/upcoming'}>Upcoming</NavLink>
+                <NavLink to={'/movies/now-playing'}>Now playing</NavLink>
             </div>
         </div>
     );

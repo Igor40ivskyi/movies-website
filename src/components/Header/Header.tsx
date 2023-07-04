@@ -49,16 +49,16 @@ const Header = () => {
                 <GenresList/>
 
                 <ShowMe/>
-                {/*<div className={'showMe'}>{userName}</div>*/}
 
-                <div className={'buttonBlock'}>
-                    <button onClick={() => {
-                        authService.removeTokens();
-                        dispatch(authActions.resetMe(1));
-                        navigate('/login');
-                    }}>logout
-                    </button>
-                </div>
+
+                {/*<div className={'buttonBlock'}>*/}
+                {/*    <button onClick={() => {*/}
+                {/*        authService.removeTokens();*/}
+                {/*        dispatch(authActions.resetMe(1));*/}
+                {/*        navigate('/login');*/}
+                {/*    }}>logout*/}
+                {/*    </button>*/}
+                {/*</div>*/}
 
             </div>
         </div>

@@ -32,6 +32,21 @@ class MovieService {
         return axiosMovieService.get(movieEndpoints.movies, {params: {...sortParams}});
     }
 
+    getPopularMoviesList():Promise<AxiosResponse>{
+        return axiosMovieService.get(movieEndpoints.popularMoviesList);
+    }
+
+    getTop_ratedMoviesList():Promise<AxiosResponse>{
+        return axiosMovieService.get(movieEndpoints.popularMoviesList,{params:{page:3}});
+    }
+
+    getUpcomingMoviesList():Promise<AxiosResponse>{
+        return axiosMovieService.get(movieEndpoints.upcomingMoviesList);
+    }
+
+    getNow_playingMoviesList():Promise<AxiosResponse>{
+        return axiosMovieService.get(movieEndpoints.now_playingMoviesList);
+    }
 }
 
 export const movieService = new MovieService();
