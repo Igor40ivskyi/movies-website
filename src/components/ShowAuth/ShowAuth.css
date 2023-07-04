@@ -1,13 +1,46 @@
 .authContainer{
     height: 50px;
-    background-color: white;
     width: 120px;
+    position: relative;
+}
+
+.authContainer:hover .authlist{
+    display: block;
 }
 
 .authLabel {
     height: 50px;
+    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    color: white;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+.authLabel:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.authlist {
+    height: 160px;
+    width: 200px;
+    background-color: whitesmoke;
+    top: 0;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+
+.auth__link {
+    width: 100%;
+    display: block;
+    /*background-color: #909690;*/
+    text-align: center;
+    padding: 20px 0;
+    font-family: sans-serif;
+    font-size: 22px;
 }
