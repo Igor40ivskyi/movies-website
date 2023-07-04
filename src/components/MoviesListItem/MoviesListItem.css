@@ -18,6 +18,8 @@
     overflow: hidden;
     font-size: 19px;
     font-family: Serif;
+    color: whitesmoke;
+    font-weight: 600;
 }
 
 .imageContainer{

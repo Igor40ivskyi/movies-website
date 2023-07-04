@@ -1,15 +1,19 @@
 .moviesListContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 780px;
+    width: 950px;
     row-gap: 10px;
-    column-gap: 17px;
+    column-gap: 27px;
     justify-content: center;
     align-items: center;
+    background-color: #0e0e1b;
+    padding: 70px 0px;
 }
 
 .wrap{
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    padding-top: 150px;
+    /*background-color: #282828;*/
+    /*margin: 0 0px;*/
 }

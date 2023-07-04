@@ -1,14 +1,39 @@
 .main {
     display: flex;
     flex-direction: column;
-    background: #2f2d2d;
-    height: 1000px;
+    min-height: 100px;
     justify-content: space-around;
 }
 
 .infoWrap {
-    display: grid;
-    width: 40%;
+    display: flex;
+    width: 70%;
     font-size: 18px;
     row-gap: 10px;
+    color: whitesmoke;
+    background-color: #909690;
+    padding:50px 0;
+}
+
+.infoText{
+    padding: 0 30px
+}
+
+.infoText>h2{
+    font-size: 34px;
+}
+
+.infoText>p {
+    padding: 20px 0;
+    font-size: 22px;
+}
+
+.infoText>div {
+    padding: 5px 0;
+
+}
+
+.infoText>div>span {
+    font-size: 20px;
+    font-weight: 600;
 }

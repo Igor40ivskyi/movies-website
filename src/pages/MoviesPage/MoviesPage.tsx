@@ -1,9 +1,10 @@
-
 import {Outlet} from "react-router-dom";
+
+import './MoviesPage.css';
 
 const MoviesPage = () => {
     return (
-        <div>
+        <div className={'moviesPage'}>
             <Outlet/>
         </div>
     );

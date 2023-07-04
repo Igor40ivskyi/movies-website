@@ -17,22 +17,29 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
         , release_date, runtime, status, vote_average, vote_count
     } = movieInfo;
 
+    const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
+    let fullPoster_path = `${FirstHalfOfPoster}${backdrop_path}`;
 
     return (
         <div className={'main'}>
-            {trailer?.results[0] && <YouTube videoId={trailer.results[0].key}/>}
             {<div className={'infoWrap'}>
-                <div>title: {title}</div>
-                <div>overview: {overview}</div>
-                <div>original_language: {original_language}</div>
-                <div>original_title: {original_title}</div>
-                <div>budget: {budget}</div>
-                <div>release_date: {release_date}</div>
-                <div>runtime: {runtime}</div>
-                <div>status: {status}</div>
-                <div>vote_average: {vote_average}</div>
-                <div>vote_count: {vote_count}</div>
+                <div>
+                    <img src={fullPoster_path} alt={title}/>
+                </div>
+                <div className={'infoText'}>
+                    <h2>{title}</h2>
+                    <p>{overview}</p>
+                    <div><span>Language:</span> {original_language}</div>
+                    <div><span>Original title:</span> {original_title}</div>
+                    <div><span>Budget:</span> {budget}</div>
+                    <div><span>Release date:</span> {release_date}</div>
+                    <div><span>Runtime:</span> {runtime} minutes</div>
+                    <div><span>Status:</span> {status}</div>
+                    <div><span>vote_average:</span> {vote_average}</div>
+                    <div><span>Vote count:</span> {vote_count}</div>
+                </div>
             </div>}
+            {trailer?.results[0] && <YouTube videoId={trailer.results[0].key}/>}
         </div>
     );
 };
