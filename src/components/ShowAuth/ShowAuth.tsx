@@ -7,8 +7,8 @@ const ShowAuth = () => {
             <div className={'authLabel'}>Auth</div>
 
             <div className={'authlist'}>
-                    <NavLink className={'auth__link'} to={'register'}>Register</NavLink>
                     <NavLink className={'auth__link'} to={'login'}>Login</NavLink>
+                    <NavLink className={'auth__link'} to={'register'}>Register</NavLink>
             </div>
 
         </div>

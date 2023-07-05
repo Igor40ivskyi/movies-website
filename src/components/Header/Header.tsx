@@ -42,11 +42,12 @@ const Header = () => {
 
                 <ShowAuth/>
 
-                <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
 
                 <ShowMovies/>
 
                 <GenresList/>
+
+                <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
 
                 <ShowMe/>
 
