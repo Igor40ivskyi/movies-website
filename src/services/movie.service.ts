@@ -47,6 +47,10 @@ class MovieService {
     getNow_playingMoviesList():Promise<AxiosResponse>{
         return axiosMovieService.get(movieEndpoints.now_playingMoviesList);
     }
+
+    getRecommendationsForMovie(id:number):Promise<AxiosResponse>{
+        return axiosMovieService.get(`/movie/${id}/recommendations`);
+    }
 }
 
 export const movieService = new MovieService();

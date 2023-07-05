@@ -10,8 +10,6 @@ const MovieInfo = () => {
 
     const {movieInfo, trailer} = useAppSelector(state => state.movieReducer);
 
-    console.log(movieInfo);
-
     const {state:{id}} = useLocation();
 
     const dispatch = useAppDispatch();
@@ -19,6 +17,7 @@ const MovieInfo = () => {
     useEffect(() => {
         dispatch(movieActions.getMovieInfo(id));
         dispatch(movieActions.getVideoTrailer(id));
+        dispatch(movieActions.getRecommendationsForMovie(id));
     },[]);
 
     return (

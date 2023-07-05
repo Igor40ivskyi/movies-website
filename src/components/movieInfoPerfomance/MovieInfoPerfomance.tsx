@@ -6,6 +6,7 @@ import {ITrailer} from "../../interfaces/trailer.interface";
 import './MovieInfoPerfomance.css'
 import ReactStars from 'react-stars';
 import {Badge} from "../Badge/Badge";
+import {RecommendationsList} from "../RecommendationsList/RecommendationsList";
 
 interface IProps {
     movieInfo: IMovieInfo;
@@ -13,8 +14,6 @@ interface IProps {
 }
 
 const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
-
-    console.log(movieInfo);
 
     const {
         title, overview, poster_path, backdrop_path, original_language, original_title, budget, production_countries
@@ -53,7 +52,6 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
                     <div><span>Release date:</span> {release_date}</div>
                     <div><span>Runtime:</span> {runtime} minutes</div>
                     <div><span>Status:</span> {status}</div>
-                    {/*<div><span>vote_average:</span> {vote_average}</div>*/}
                     <div><span>Vote count:</span> {vote_count}</div>
                 </div>
 
@@ -63,6 +61,8 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
                 {trailer?.results[0] && <YouTube videoId={trailer.results[0].key}
                                                  opts={{width: 1150, height: 550}}/>}
             </div>
+
+            <RecommendationsList/>
 
         </div>
     );

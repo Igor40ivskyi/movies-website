@@ -13,7 +13,6 @@ const ShowMe = () => {
 
     const userName = `${me}`;
     const firstLetter = userName.slice(0,1).toUpperCase();
-    console.log(firstLetter);
 
     return (
         <div>
