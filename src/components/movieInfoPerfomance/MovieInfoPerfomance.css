@@ -1,22 +1,30 @@
-.main {
+.mainPerformanceWrap {
+    /*background-color: #0e0e1b;*/
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    min-height: 100px;
-    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: absolute;
 }
 
 .infoWrap {
     display: flex;
-    width: 70%;
     font-size: 18px;
     row-gap: 10px;
-    color: whitesmoke;
-    background-color: #909690;
-    padding:50px 0;
+    color: #b6b1b1;
+    background-color: #1b1818;
+    padding:50px 50px;
+    width: 1150px;
+}
+
+.infoWrap>div>img{
+    height: 340px;
+    width: 570px;
 }
 
 .infoText{
-    padding: 0 30px
+    padding: 0 20px
 }
 
 .infoText>h2{
@@ -26,6 +34,7 @@
 .infoText>p {
     padding: 20px 0;
     font-size: 22px;
+    max-width: 600px;
 }
 
 .infoText>div {
@@ -36,4 +45,20 @@
 .infoText>div>span {
     font-size: 20px;
     font-weight: 600;
+}
+
+.badgesListWrap {
+    display: flex;
+    max-width: 630px;
+    flex-wrap: wrap;
+}
+
+.genresRelated {
+    width: 570px;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.trailerBlock{
+    margin-top: 30px;
 }

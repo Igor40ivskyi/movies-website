@@ -6,7 +6,7 @@
     column-gap: 27px;
     justify-content: center;
     align-items: center;
-    background-color: #0e0e1b;
+    background-color: #1b1818;
     padding: 70px 0px;
 }
 
@@ -17,3 +17,19 @@
     /*background-color: #282828;*/
     /*margin: 0 0px;*/
 }
+
+.paginationWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*margin-bottom: 30px;*/
+}
+
+.paginationContainer{
+    display: flex;
+    justify-content: center;
+    background-color: #807e7e;
+    width: 950px;
+}
+
+

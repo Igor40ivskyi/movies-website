@@ -22,7 +22,7 @@ const MovieInfo = () => {
     },[]);
 
     return (
-        <div className={'main'}>
+        <div className={'movieInfoWrap'}>
             {movieInfo && <MovieInfoPerfomance movieInfo={movieInfo} trailer={trailer}/>}
         </div>
     );
