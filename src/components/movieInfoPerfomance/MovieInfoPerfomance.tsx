@@ -21,8 +21,13 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
         , release_date, runtime, status, vote_average, vote_count,genres
     } = movieInfo;
 
+
     const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
     let fullPoster_path = `${FirstHalfOfPoster}${backdrop_path}`;
+
+    if (!backdrop_path) {
+        fullPoster_path = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
+    }
 
     return (
         <div className={'mainPerformanceWrap'}>

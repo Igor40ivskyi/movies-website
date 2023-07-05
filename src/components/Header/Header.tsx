@@ -39,9 +39,7 @@ const Header = () => {
 
             <div className={'header'}>
 
-
                 <ShowAuth/>
-
 
                 <ShowMovies/>
 
@@ -50,16 +48,6 @@ const Header = () => {
                 <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
 
                 <ShowMe/>
-
-
-                {/*<div className={'buttonBlock'}>*/}
-                {/*    <button onClick={() => {*/}
-                {/*        authService.removeTokens();*/}
-                {/*        dispatch(authActions.resetMe(1));*/}
-                {/*        navigate('/login');*/}
-                {/*    }}>logout*/}
-                {/*    </button>*/}
-                {/*</div>*/}
 
             </div>
         </div>
