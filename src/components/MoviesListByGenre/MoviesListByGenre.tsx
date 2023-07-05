@@ -31,11 +31,15 @@ const MoviesListByGenre = () => {
                 </div>
             </div>
 
-            <Container style={{display: 'flex', justifyContent: 'center'}}>
-                <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}}
-                            count={total_pagesByGenre < 500 ? total_pagesByGenre : 500} page={+pageByGenre}
-                            onChange={(_, num) => setParams(prev => ({genreId: genreId, page: `${num}`}))}/>
-            </Container>
+            {/*<Container style={{display: 'flex', justifyContent: 'center'}}>*/}
+            <div className={'paginationWrap'}>
+                <div className={'paginationContainer'}>
+                    <Pagination size={'large'} color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}}
+                                count={total_pagesByGenre < 500 ? total_pagesByGenre : 500} page={+pageByGenre}
+                                onChange={(_, num) => setParams(prev => ({genreId: genreId, page: `${num}`}))}/>
+                </div>
+            </div>
+            {/*</Container>*/}
 
         </div>
     );

@@ -37,7 +37,6 @@ const MoviesList: FC = () => {
                 </div>
             </div>
 
-            {/*<Container className={'paginationContainer'} style={{display:'flex',justifyContent:'center'}}>*/}
             <div className={'paginationWrap'}>
                 <div className={'paginationContainer'}>
                     <Pagination size={"large"} color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}}
@@ -45,7 +44,6 @@ const MoviesList: FC = () => {
                                 onChange={(_, num) => setQuery({page: `${num}`})}/>
                 </div>
             </div>
-            {/*</Container>*/}
 
         </div>
     );
