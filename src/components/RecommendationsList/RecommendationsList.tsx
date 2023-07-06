@@ -11,8 +11,7 @@ const RecommendationsList = () => {
 
     return (
         <div className={'recommendationsContainer'}>
-            {recommendationsList && recommendationsList.map(movie => <RecommendationsItem key={movie.id}
-                                                                                          movie={movie}/>)}
+
         </div>
     );
 };
