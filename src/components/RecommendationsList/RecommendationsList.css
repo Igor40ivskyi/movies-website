@@ -1,8 +1,10 @@
-.recommendationsContainer{
+.recommendationsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
-    margin-top: 100px;
-    background-color: #909690;
+    width: 1150px;
+    margin-top: 90px;
+    background-color: #2e302e;
+    padding: 30px 50px;
+
 }

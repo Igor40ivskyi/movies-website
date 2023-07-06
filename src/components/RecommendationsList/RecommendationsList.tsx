@@ -14,6 +14,11 @@ const RecommendationsList = () => {
         <div className={'recommendationsContainer'}>
             {/*{recommendationsList && recommendationsList.map(movie => <RecommendationsItem key={movie.id}*/}
             {/*                                                                              movie={movie}/>)}*/}
+
+            <div>
+                XXXXXXXXXXXXXXXXXXXXXXXXXX
+            </div>
+
             {recommendationsList && <Slider list={recommendationsList}/>}
 
         </div>
