@@ -2,6 +2,7 @@ import {useAppSelector} from "../../hooks";
 import {RecommendationsItem} from "../RecommendationsItem/RecommendationsItem";
 
 import './RecommendationsList.css'
+import {Slider} from "../Slider/Slider";
 
 
 const RecommendationsList = () => {
@@ -11,7 +12,7 @@ const RecommendationsList = () => {
 
     return (
         <div className={'recommendationsContainer'}>
-
+            {recommendationsList && <Slider list={recommendationsList}/>}
         </div>
     );
 };
