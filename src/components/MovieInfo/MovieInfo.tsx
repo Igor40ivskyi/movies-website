@@ -18,7 +18,7 @@ const MovieInfo = () => {
         dispatch(movieActions.getMovieInfo(id));
         dispatch(movieActions.getVideoTrailer(id));
         dispatch(movieActions.getRecommendationsForMovie(id));
-    },[]);
+    },[id]);
 
     return (
         <div className={'movieInfoWrap'}>

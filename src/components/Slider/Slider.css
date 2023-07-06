@@ -9,3 +9,21 @@
 .xxx {
     padding: 40px 0;
 }
+
+.recommendedItemTitle {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 4px;
+    color: whitesmoke;
+}
+
+.recommendedItemWrap{
+    /*border: 2px solid rebeccapurple;*/
+    margin-bottom: 40px;
+}
+
+.recommendedItemWrap:hover {
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+}
