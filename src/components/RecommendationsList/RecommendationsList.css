@@ -4,7 +4,16 @@
     justify-content: center;
     width: 1150px;
     margin-top: 90px;
-    background-color: #2e302e;
-    /*padding: 30px 50px;*/
+    background-color: #444e40;
+    padding: 30px 50px;
 
+
+}
+
+.seeTheRecommendations {
+    font-size: 22px;
+    padding-bottom: 30px;
+    width: 100%;
+    color: whitesmoke;
+    font-family: Corbel;
 }

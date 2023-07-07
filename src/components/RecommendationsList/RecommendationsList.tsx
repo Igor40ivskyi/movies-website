@@ -12,6 +12,9 @@ const RecommendationsList = () => {
 
     return (
         <div className={'recommendationsContainer'}>
+            <div className={'seeTheRecommendations'}>
+                See the recommendations
+            </div>
             {recommendationsList && <Slider list={recommendationsList}/>}
         </div>
     );
