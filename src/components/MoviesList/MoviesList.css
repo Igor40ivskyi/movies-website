@@ -2,12 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 950px;
-    row-gap: 10px;
-    column-gap: 27px;
+    row-gap: 32px;
+    column-gap: 34px;
     justify-content: center;
     align-items: center;
-    background-color: #3d413d;
+    /*background-color: papayawhip;*/
     padding: 70px 0px;
+    box-shadow: 1px 1px 5px #07071c;
 }
 
 .wrap{
@@ -28,8 +29,9 @@
 .paginationContainer{
     display: flex;
     justify-content: center;
-    background-color: #807e7e;
+    background-color: #ebe8e7;
     width: 950px;
+    box-shadow: 1px 1px 5px #07071c;
 }
 
 

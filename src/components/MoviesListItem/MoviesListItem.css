@@ -11,15 +11,16 @@
 
 .title{
     width: 175px;
-    height: 29px;
+    height: 36px;
     box-sizing: border-box;
-    padding: 5px;
+    padding-top: 12px;
     margin-bottom: 10px;
     overflow: hidden;
-    font-size: 19px;
-    font-family: Serif;
-    color: whitesmoke;
-    font-weight: 600;
+    font-size: 21px;
+    /*font-family:Castellar;*/
+    font-family:"Baskerville Old Face";
+    color: black;
+    font-weight: 700;
 }
 
 .imageContainer{

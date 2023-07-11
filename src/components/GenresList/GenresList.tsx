@@ -17,7 +17,7 @@ const GenresList = () => {
 
     return (
         <div className={'genresContainer'}>
-            <div className={'label'}>GENRES</div>
+            <div className={'label'}>Genres</div>
                 <div className={'listContainer'}>
                         {genresList && genresList.map(genre => <div
                             onClick={() => navigate(`/movies/by-genre?genreId=${genre.id}&page=1`)}

@@ -1,5 +1,6 @@
 .categoriesContainer{
     position: relative;
+    /*color: whitesmoke;*/
 }
 
 .categoriesContainer:hover {
@@ -18,12 +19,13 @@
 .moviesLabel {
     height: 50px;
     width: 120px;
-    color: #000000;
+    color: whitesmoke;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 23px;
+    font-family: "Microsoft JhengHei";
 }
 
 .moviesCategories>a {
