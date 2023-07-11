@@ -12,10 +12,11 @@
     display: flex;
     font-size: 18px;
     row-gap: 10px;
-    color: #b6b1b1;
-    background-color: #1b1818;
+    color: #000000;
+    /*background-color: #1b1818;*/
     padding:50px 50px;
     width: 1150px;
+    box-shadow: 2px 2px 5px #afacac;
 }
 
 .infoWrap>div>img{
