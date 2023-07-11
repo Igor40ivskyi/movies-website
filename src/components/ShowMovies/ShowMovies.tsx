@@ -5,6 +5,7 @@ const ShowMovies = () => {
     return (
         <div className={'categoriesContainer'}>
             <div className={'moviesLabel'}>Movies</div>
+
             <div className={'moviesCategories'}>
                 <NavLink to={'movies'}>common</NavLink>
                 <NavLink to={'/movies/popular'}>Popular</NavLink>
