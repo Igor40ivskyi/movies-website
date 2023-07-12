@@ -1,16 +1,24 @@
 import './Search.css';
 import {useState} from "react";
+import {movieService} from "../../services/movie.service";
+import {IMovie} from "../../interfaces/movie.interface";
 
 const Search = () => {
 
     const [searchValue, setSearchValue] = useState<string>('');
+    const [byKeywordMovies, setByKeywordMovies] = useState<IMovie[]>([]);
+
+    console.log(byKeywordMovies);
 
     const handleInputChange = (event: any) => {
-        setSearchValue(event.target.value);
+        const value = event.target.value;
+        setSearchValue(value);
+        movieService.getMoviesByKeyWord(value).then(value => value.data).then(value => setByKeywordMovies(value.results));
     };
 
     const handleClearClick = () => {
         setSearchValue('');
+        setByKeywordMovies([]);
     };
 
     return (
@@ -30,6 +38,10 @@ const Search = () => {
                 </div>
 
                 <span onClick={handleClearClick} className={'clear'}></span>
+            </div>
+
+            <div className={'result_container'}>
+                {byKeywordMovies && byKeywordMovies.map(item => <div className={'byKeywordItem'} key={item.id}></div>)}
             </div>
 
         </div>

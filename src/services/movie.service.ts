@@ -51,6 +51,10 @@ class MovieService {
     getRecommendationsForMovie(id:number):Promise<AxiosResponse>{
         return axiosMovieService.get(`/movie/${id}/recommendations`);
     }
+
+    getMoviesByKeyWord(keyWord:string):Promise<AxiosResponse>{
+        return axiosMovieService.get(movieEndpoints.byKeyword,{params:{query: keyWord}})
+    }
 }
 
 export const movieService = new MovieService();

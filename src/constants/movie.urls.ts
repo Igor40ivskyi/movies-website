@@ -8,6 +8,7 @@ const movieEndpoints = {
     now_playingMoviesList: '/movie/now_playing',
     top_ratedMoviesList: '/movie/top_rated',
     upcomingMoviesList: '/movie/upcoming',
+    byKeyword: '/search/movie',
 };
 
 export {
