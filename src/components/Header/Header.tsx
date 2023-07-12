@@ -10,6 +10,7 @@ import {GenresList} from "../GenresList/GenresList";
 import {ShowMe} from "../ShowMe/ShowMe";
 import {ShowAuth} from "../ShowAuth/ShowAuth";
 import {ShowMovies} from "../ShowMovies/ShowMovies";
+import {Search} from "../Search/Search";
 
 const Header = () => {
 
@@ -46,6 +47,8 @@ const Header = () => {
                 <GenresList/>
 
                 {/*<NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>*/}
+
+                <Search/>
 
                 <ShowMe/>
 

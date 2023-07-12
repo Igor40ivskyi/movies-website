@@ -1,0 +1,31 @@
+.search_container{
+    width: 200px;
+    /*background-color: #909690;*/
+}
+
+.search {
+    background-color: whitesmoke;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    transition: 0.5s;
+    display: flex;
+    overflow: hidden;
+}
+
+.active{
+    width: 200px;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon>img {
+    height: 25px;
+    width: 45px;
+}
