@@ -45,7 +45,7 @@ const Header = () => {
 
                 <GenresList/>
 
-                <NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>
+                {/*<NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>*/}
 
                 <ShowMe/>
 
