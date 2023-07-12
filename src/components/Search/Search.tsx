@@ -2,13 +2,18 @@ import './Search.css';
 import {useState} from "react";
 import {movieService} from "../../services/movie.service";
 import {IMovie} from "../../interfaces/movie.interface";
+import {useNavigate} from "react-router-dom";
 
 const Search = () => {
 
     const [searchValue, setSearchValue] = useState<string>('');
     const [byKeywordMovies, setByKeywordMovies] = useState<IMovie[]>([]);
 
+    const firstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
+
     console.log(byKeywordMovies);
+
+    const navigate = useNavigate();
 
     const handleInputChange = (event: any) => {
         const value = event.target.value;
@@ -41,7 +46,21 @@ const Search = () => {
             </div>
 
             <div className={'result_container'}>
-                {byKeywordMovies && byKeywordMovies.map(item => <div className={'byKeywordItem'} key={item.id}></div>)}
+                {byKeywordMovies && byKeywordMovies.map(item => <div onClick={()=>{
+                    navigate('/movies/info',
+                        {state:{id: item.id}})
+                    setByKeywordMovies([]);
+                }}
+
+                     className={'byKeywordItem'} key={item.id}>
+                    <div>
+                        <img src={`${firstHalfOfPoster}${item.poster_path}`} alt=""/>
+                        <div className={'byKeywordInfoBlock'}>
+                            <div className={'byKeywordTitle'}>{item.original_title}</div>
+                            <div>{item.release_date}, {item.original_language}</div>
+                        </div>
+                    </div>
+                </div>)}
             </div>
 
         </div>
