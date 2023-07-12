@@ -18,13 +18,15 @@
 }
 
 .showMe>div {
-    color: whitesmoke;
+    color: #000000;
     /*height: 50px;*/
     font-size: 20px;
     border-radius: 2px;
     /*border: 2px solid whitesmoke;*/
-    background-color: #ba1a1a;
+    font-family: "Microsoft Sans Serif";
+    background-color: #25ba1a;
     padding: 5px 11px;
+    font-weight: 570;
 }
 
 .userInfo {

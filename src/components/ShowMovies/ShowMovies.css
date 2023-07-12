@@ -24,8 +24,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
-    font-family: "Microsoft JhengHei";
+    font-size: 19px;
+    font-family: "Microsoft Sans Serif";
+    font-weight: 550;
 }
 
 .moviesCategories>a {

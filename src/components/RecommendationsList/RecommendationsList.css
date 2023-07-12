@@ -3,17 +3,17 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 1150px;
-    margin-top: 90px;
-    background-color: #444e40;
+    /*margin-top: 90px;*/
+    background-color: whitesmoke;
     padding: 30px 50px;
 
 
 }
 
 .seeTheRecommendations {
-    font-size: 22px;
+    font-size: 24px;
     padding-bottom: 30px;
     width: 100%;
-    color: whitesmoke;
+    color: #000000;
     font-family: Corbel;
 }

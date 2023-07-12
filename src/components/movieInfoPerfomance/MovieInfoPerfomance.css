@@ -13,7 +13,7 @@
     font-size: 18px;
     row-gap: 10px;
     color: #000000;
-    /*background-color: #1b1818;*/
+    background-color: whitesmoke;
     padding:50px 50px;
     width: 1150px;
     box-shadow: 2px 2px 5px #afacac;
@@ -30,12 +30,14 @@
 
 .infoText>h2{
     font-size: 34px;
+    font-family: Bahnschrift;
 }
 
 .infoText>p {
     padding: 20px 0;
     font-size: 22px;
     max-width: 600px;
+    font-family: Bahnschrift;
 }
 
 .infoText>div {
@@ -61,5 +63,5 @@
 }
 
 .trailerBlock{
-    margin-top: 30px;
+    /*margin-top: 30px;*/
 }

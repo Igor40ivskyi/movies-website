@@ -6,13 +6,14 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    font-family: "Corbel Light";
+    font-family: Bahnschrift;
     /*background-color: #909690;*/
-    font-weight: 1000;
 }
 
 .badge:hover{
-    color: #af3613;
+    color: #218f00;
+    font-weight: 550;
     cursor: pointer;
-    background-color: #828286;
+    /*background-color: #828286;*/
+    box-shadow: 2px 2px 4px #8b8989;
 }

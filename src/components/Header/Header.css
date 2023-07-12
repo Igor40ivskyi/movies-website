@@ -24,7 +24,7 @@
 
 .header a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 19px;
     color: black;
     font-family: "Microsoft JhengHei";
     font-weight: 560;
@@ -32,7 +32,7 @@
 }
 
 .header a.active{
-    color: #e30505;
+    /*color: #e30505;*/
 }
 
 .buttonBlock{

@@ -20,12 +20,13 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 23px;
-    font-family: "Microsoft JhengHei";
+    font-size: 19px;
+    font-family: "Microsoft Sans Serif";
+    /*font-weight: 550;*/
 }
 
 .authlist {
-    width: 170px;
+    width: 120px;
     background-color: whitesmoke;
     left: 0;
     position: absolute;
