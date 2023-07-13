@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
@@ -10,10 +10,11 @@ const root = ReactDOM.createRoot(
 );
 
 const store = setupStore();
+
 root.render(
     <Provider store={store}>
         <BrowserRouter>
-            <App/>
+                <App/>
         </BrowserRouter>
     </Provider>
 );

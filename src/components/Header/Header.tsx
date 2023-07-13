@@ -1,6 +1,6 @@
 import {NavLink, useNavigate} from "react-router-dom";
 import jwtDecode from "jwt-decode";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 
 import './Header.css';
 import {authService} from "../../services";
@@ -11,6 +11,8 @@ import {ShowMe} from "../ShowMe/ShowMe";
 import {ShowAuth} from "../ShowAuth/ShowAuth";
 import {ShowMovies} from "../ShowMovies/ShowMovies";
 import {Search} from "../Search/Search";
+import ReactSwitch from "react-switch";
+import {ThemeContext} from "../../App";
 
 const Header = () => {
 
@@ -18,6 +20,8 @@ const Header = () => {
     const userName = `${me}`;
 
     const [state, setState] = useState<number>(null);
+
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -38,7 +42,7 @@ const Header = () => {
     return (
         <div className={'headerWrap'}>
 
-            <div className={'header'}>
+            <div className={'header'} id={theme}>
 
                 <ShowAuth/>
 
@@ -51,6 +55,8 @@ const Header = () => {
                 <Search/>
 
                 <ShowMe/>
+
+                <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
 
             </div>
         </div>

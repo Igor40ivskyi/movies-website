@@ -22,6 +22,14 @@
     box-shadow: 1px 1px 10px slategrey;
 }
 
+#light {
+    background-color: rgb(97, 95, 95);
+}
+
+#dark{
+    background-color: #0f0e0e;
+}
+
 .header a {
     text-decoration: none;
     font-size: 19px;
