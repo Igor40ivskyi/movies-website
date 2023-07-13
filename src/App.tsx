@@ -1,4 +1,6 @@
+import {createContext, useState} from "react";
 import {Navigate, Route, Routes} from "react-router-dom";
+
 import {MainLayout} from "./layouts";
 import {LoginPage, RegisterPage} from "./pages";
 import {MoviesPage} from "./pages";
@@ -9,10 +11,9 @@ import {PrivateRoute} from "./utils/router/PrivateRoute";
 import {MoviesListByGenre} from "./components/MoviesListByGenre/MoviesListByGenre";
 import {FindMovies} from "./components/FindMovies/FindMovies";
 import {PopularMoviesList} from "./components/PopularMoviesList/PopularMoviesList";
-import {Top_RatedMoviesList} from "./components/Top_RatedMoviesList/Top_RatedMoviesList";
+import {TopRatedMoviesList} from "./components/TopRatedMoviesList/TopRatedMoviesList";
 import {UpcomingMoviesList} from "./components/UpcomingMoviesList/UpcomingMoviesList";
-import {Now_PlayingMoviesList} from "./components/Now_PlayingMoviesList/Now_PlayingMoviesList";
-import {createContext, useState} from "react";
+import {NowPlayingMoviesList} from "./components/NowPlayingMoviesList/NowPlayingMoviesList";
 
 export const ThemeContext = createContext(null);
 
@@ -40,9 +41,9 @@ const App = () => {
                             <Route path={'by-genre'} element={<MoviesListByGenre/>}/>
                             <Route path={'find'} element={<FindMovies/>}/>
                             <Route path={'popular'} element={<PopularMoviesList/>}/>
-                            <Route path={'top-rated'} element={<Top_RatedMoviesList/>}/>
+                            <Route path={'top-rated'} element={<TopRatedMoviesList/>}/>
                             <Route path={'upcoming'} element={<UpcomingMoviesList/>}/>
-                            <Route path={'now-playing'} element={<Now_PlayingMoviesList/>}/>
+                            <Route path={'now-playing'} element={<NowPlayingMoviesList/>}/>
                         </Route>
                     </Route>
 

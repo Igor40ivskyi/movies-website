@@ -1,8 +1,9 @@
-import './Search.css';
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+
 import {movieService} from "../../services/movie.service";
 import {IMovie} from "../../interfaces/movie.interface";
-import {useNavigate} from "react-router-dom";
+import './Search.css';
 
 const Search = () => {
 

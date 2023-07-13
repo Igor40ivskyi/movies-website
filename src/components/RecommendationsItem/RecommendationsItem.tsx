@@ -1,6 +1,7 @@
 import {FC} from "react";
-import {IMovie} from "../../interfaces/movie.interface";
 import {useNavigate} from "react-router-dom";
+
+import {IMovie} from "../../interfaces/movie.interface";
 
 interface IProps{
     movie: IMovie;

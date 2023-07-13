@@ -1,5 +1,6 @@
-import './ShowAuth.css';
 import {NavLink} from "react-router-dom";
+
+import './ShowAuth.css';
 
 const ShowAuth = () => {
     return (

@@ -1,8 +1,6 @@
 import {Outlet} from "react-router-dom";
 
 import './MoviesPage.css';
-import {useContext} from "react";
-import {ThemeContext} from "../../App";
 
 const MoviesPage = () => {
 

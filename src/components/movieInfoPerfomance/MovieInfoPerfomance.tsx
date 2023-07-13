@@ -1,12 +1,12 @@
 import {FC} from "react";
 import YouTube from "react-youtube";
+import ReactStars from 'react-stars';
 
+import {RecommendationsList} from "../RecommendationsList/RecommendationsList";
 import {IMovieInfo} from "../../interfaces/movieInfo.interface";
 import {ITrailer} from "../../interfaces/trailer.interface";
-import './MovieInfoPerfomance.css'
-import ReactStars from 'react-stars';
 import {Badge} from "../Badge/Badge";
-import {RecommendationsList} from "../RecommendationsList/RecommendationsList";
+import './MovieInfoPerfomance.css'
 
 interface IProps {
     movieInfo: IMovieInfo;
@@ -16,8 +16,8 @@ interface IProps {
 const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
 
     const {
-        title, overview, poster_path, backdrop_path, original_language, original_title, budget, production_countries
-        , release_date, runtime, status, vote_average, vote_count,genres
+        title, overview, backdrop_path, original_language, original_title, budget,
+        release_date, runtime, status, vote_average, vote_count, genres
     } = movieInfo;
 
 
@@ -33,13 +33,14 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
             {<div className={'infoWrap'}>
                 <div>
                     <img src={fullPoster_path} alt={title}/>
-                    {/*<ReactStars count={10} size={40} color2={'gold'} value={vote_average} edit={false}/>*/}
+
                     <div className={'badgesListWrap'}>
                         <div className={'genresRelated'}>
                             Related genres
                         </div>
                         {genres.map(item => <Badge key={item.id} genre={item}/>)}
                     </div>
+
                 </div>
 
                 <div className={'infoText'}>

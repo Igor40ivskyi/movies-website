@@ -1,20 +1,22 @@
 import {SubmitHandler, useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {useNavigate} from "react-router-dom";
+
+import {AuthValidator} from "../../validators/auth.validator";
 import {ILogin} from "../../types";
 import {authActions} from "../../redux";
-import {joiResolver} from "@hookform/resolvers/joi";
-import {AuthValidator} from "../../validators/auth.validator";
-import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../hooks";
 
 const LoginForm = () => {
-
-    const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const {register, handleSubmit, reset, formState: {errors}} = useForm<ILogin>({
         mode: 'all',
         resolver: joiResolver(AuthValidator.login)
     });
+
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
 
     const loginUser:SubmitHandler<any> = async (user) => {
         await dispatch(authActions.login(user));

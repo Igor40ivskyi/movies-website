@@ -1,14 +1,14 @@
+import {FC} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
+import {useNavigate} from "react-router-dom";
+
+import {IMovie} from "../../interfaces/movie.interface";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
-import {FC} from "react";
-import {IMovie} from "../../interfaces/movie.interface";
 import './Slider.css'
-import {useNavigate} from "react-router-dom";
-
 
 interface IProps {
     list: IMovie[];

@@ -1,9 +1,10 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useEffect} from "react";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {categoriesActions} from "../../redux/slices/categories.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 
-const Now_PlayingMoviesList = () => {
+const NowPlayingMoviesList = () => {
 
     const {now_playing_movies} = useAppSelector(state => state.categoriesReducer);
 
@@ -11,7 +12,7 @@ const Now_PlayingMoviesList = () => {
 
     useEffect(() => {
         dispatch(categoriesActions.getNow_playingMoviesList());
-    },[]);
+    },[dispatch]);
 
     return (
         <div>
@@ -24,4 +25,4 @@ const Now_PlayingMoviesList = () => {
     );
 };
 
-export {Now_PlayingMoviesList};
+export {NowPlayingMoviesList};

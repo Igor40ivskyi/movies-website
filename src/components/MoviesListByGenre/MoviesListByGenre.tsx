@@ -1,9 +1,10 @@
-import {useSearchParams} from "react-router-dom";
 import {useEffect} from "react";
+import {useSearchParams} from "react-router-dom";
+import {Pagination} from "@mui/material";
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slices/movie.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
-import {Container, Pagination} from "@mui/material";
 
 const MoviesListByGenre = () => {
 
@@ -20,7 +21,7 @@ const MoviesListByGenre = () => {
 
     useEffect(() => {
         dispatch(movieActions.getMoviesListByGenreId({genreId, page}));
-    }, [genreId,page]);
+    }, [genreId,page,dispatch]);
 
 
     return (
@@ -31,7 +32,6 @@ const MoviesListByGenre = () => {
                 </div>
             </div>
 
-            {/*<Container style={{display: 'flex', justifyContent: 'center'}}>*/}
             <div className={'paginationWrap'}>
                 <div className={'paginationContainer'}>
                     <Pagination size={'large'} color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}}
@@ -39,7 +39,6 @@ const MoviesListByGenre = () => {
                                 onChange={(_, num) => setParams(prev => ({genreId: genreId, page: `${num}`}))}/>
                 </div>
             </div>
-            {/*</Container>*/}
 
         </div>
     );

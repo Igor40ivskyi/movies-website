@@ -1,9 +1,9 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
-
-import './ShowMe.css';
-import {authService} from "../../services";
 import {useNavigate} from "react-router-dom";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {authService} from "../../services";
 import {authActions} from "../../redux";
+import './ShowMe.css';
 
 const ShowMe = () => {
     const {me} = useAppSelector(state => state.authReducer);
@@ -20,7 +20,6 @@ const ShowMe = () => {
                 <div className={'showMe'}>
                     <div>
                         {firstLetter}
-                        {/*<AccountCircleTwoToneIcon/>*/}
                     </div>
 
                     <div className={'userInfo'}>

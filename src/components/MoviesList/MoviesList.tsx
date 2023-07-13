@@ -1,13 +1,13 @@
 import {FC, useEffect} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {Container, Pagination} from '@mui/material';
+import {Pagination} from '@mui/material';
+import jwtDecode from "jwt-decode";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slices/movie.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
-import './MoviesList.css';
-import jwtDecode from "jwt-decode";
 import {authService} from "../../services";
+import './MoviesList.css';
 
 const MoviesList: FC = () => {
 
@@ -27,7 +27,7 @@ const MoviesList: FC = () => {
         } catch (e) {
             navigate('/login');
         }
-    }, [choose, dispatch]);
+    }, [choose, dispatch, navigate]);
 
     return (
         <div>

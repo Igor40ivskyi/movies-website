@@ -1,8 +1,7 @@
 import {useAppSelector} from "../../hooks";
-import {RecommendationsItem} from "../RecommendationsItem/RecommendationsItem";
 
-import './RecommendationsList.css'
 import {Slider} from "../Slider/Slider";
+import './RecommendationsList.css'
 
 
 const RecommendationsList = () => {

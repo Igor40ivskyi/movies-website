@@ -1,9 +1,10 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useEffect} from "react";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {categoriesActions} from "../../redux/slices/categories.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 
-const Top_RatedMoviesList = () => {
+const TopRatedMoviesList = () => {
 
     const {top_rated_movies} = useAppSelector(state => state.categoriesReducer);
 
@@ -11,7 +12,7 @@ const Top_RatedMoviesList = () => {
 
     useEffect(() => {
         dispatch(categoriesActions.getTop_ratedMoviesList());
-    },[]);
+    },[dispatch]);
 
     return (
         <div>
@@ -24,4 +25,4 @@ const Top_RatedMoviesList = () => {
     );
 };
 
-export {Top_RatedMoviesList};
+export {TopRatedMoviesList};

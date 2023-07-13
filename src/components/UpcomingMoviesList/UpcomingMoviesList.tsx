@@ -1,5 +1,6 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useEffect} from "react";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {categoriesActions} from "../../redux/slices/categories.slice";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 
@@ -11,7 +12,7 @@ const UpcomingMoviesList = () => {
 
     useEffect(() => {
         dispatch(categoriesActions.getUpcomingMoviesList());
-    },[]);
+    },[dispatch]);
 
     return (
         <div>
