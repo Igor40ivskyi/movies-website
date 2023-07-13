@@ -1,29 +1,23 @@
-import {NavLink, useNavigate} from "react-router-dom";
-import jwtDecode from "jwt-decode";
 import {useContext, useEffect, useState} from "react";
+import jwtDecode from "jwt-decode";
+import ReactSwitch from "react-switch";
 
-import './Header.css';
 import {authService} from "../../services";
-import {useAppDispatch, useAppSelector} from "../../hooks";
+import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
 import {GenresList} from "../GenresList/GenresList";
 import {ShowMe} from "../ShowMe/ShowMe";
 import {ShowAuth} from "../ShowAuth/ShowAuth";
 import {ShowMovies} from "../ShowMovies/ShowMovies";
 import {Search} from "../Search/Search";
-import ReactSwitch from "react-switch";
 import {ThemeContext} from "../../App";
+import './Header.css';
 
 const Header = () => {
 
-    const {me} = useAppSelector(state => state.authReducer);
-    const userName = `${me}`;
-
-    const [state, setState] = useState<number>(null);
-
+    const [, setState] = useState<number>(null);
     const {theme, toggleTheme} = useContext(ThemeContext);
 
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const accessToken = authService.getAccessToken();
@@ -49,8 +43,6 @@ const Header = () => {
                 <ShowMovies/>
 
                 <GenresList/>
-
-                {/*<NavLink className={'find'} to={'/movies/find'}>FIND</NavLink>*/}
 
                 <Search/>
 
