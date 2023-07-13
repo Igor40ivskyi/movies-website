@@ -12,8 +12,6 @@ const Search = () => {
 
     const firstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
 
-    console.log(byKeywordMovies);
-
     const navigate = useNavigate();
 
     const handleInputChange = (event: any) => {
