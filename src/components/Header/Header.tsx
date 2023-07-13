@@ -42,7 +42,7 @@ const Header = () => {
     return (
         <div className={'headerWrap'}>
 
-            <div className={'header'} id={theme}>
+            <div className={'header'}>
 
                 <ShowAuth/>
 

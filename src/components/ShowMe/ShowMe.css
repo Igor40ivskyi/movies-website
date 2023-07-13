@@ -14,17 +14,18 @@
 
 .showMe:hover .userInfo{
     display: block;
-    background-color: whitesmoke;
+    background-color: #fdfdfd;
+    box-shadow: 1px 1px 15px #abaaaa;
 }
 
 .showMe>div {
-    color: #000000;
+    color: #ffffff;
     /*height: 50px;*/
     font-size: 20px;
     border-radius: 2px;
     /*border: 2px solid whitesmoke;*/
     font-family: "Microsoft Sans Serif";
-    background-color: #25ba1a;
+    background-color: #a20000;
     padding: 5px 11px;
     font-weight: 570;
 }

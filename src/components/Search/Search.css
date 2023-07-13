@@ -119,6 +119,7 @@
     max-height: 600px;
     background-color: #ffffff;
     overflow: auto;
+    box-shadow: 1px 1px 15px #abaaaa;
 
 }
 
@@ -131,7 +132,7 @@
 }
 
 .result_container::-webkit-scrollbar-thumb{
-    background-color: #047304;
+    background-color: #2b2b2b;
     border-radius: 5px;
     height: 10px;
 }

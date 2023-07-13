@@ -47,6 +47,7 @@ position: relative;
     flex-wrap: wrap;
     display: none;
     padding-right: 45px;
+    box-shadow: 1px 1px 15px #abaaaa;
 }
 
 .listContainer>div{

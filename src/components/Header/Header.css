@@ -17,13 +17,12 @@
     width: 80%;
     position: fixed;
     z-index: 6;
-    opacity: 0.97;
     /*border: 2px solid #48488d;*/
-    box-shadow: 1px 1px 10px slategrey;
+    /*box-shadow: 1px 1px 10px slategrey;*/
 }
 
 #light {
-    background-color: rgb(97, 95, 95);
+    background-color: #585858;
 }
 
 #dark{
@@ -32,11 +31,11 @@
 
 .header a {
     text-decoration: none;
-    font-size: 19px;
+    font-size: 17px;
     color: black;
     font-family: "Microsoft JhengHei";
     font-weight: 560;
-    box-shadow: 0.1px 0.1px 0.8px black;
+    /*box-shadow: 0.1px 0.1px 0.8px black;*/
 }
 
 .header a.active{

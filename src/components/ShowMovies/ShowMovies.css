@@ -41,4 +41,5 @@
     left: 0;
     background-color: whitesmoke;
     display: none;
+    box-shadow: 1px 1px 15px #abaaaa;
 }
