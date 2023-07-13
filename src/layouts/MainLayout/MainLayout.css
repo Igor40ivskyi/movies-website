@@ -1,0 +1,60 @@
+#light .header{
+    background-color: #5c5c5c;
+    opacity: 0.98;
+}
+
+#dark .header{
+    background-color: #000000;
+    opacity: 0.98;
+}
+
+#dark .moviesPage{
+    /*background-color: #0f0e0e;*/
+    background-image: url("https://i.pinimg.com/originals/79/2b/95/792b959db0273b65bd7c70662e530214.jpg");
+
+}
+
+#dark .moviesListContainer, #dark .paginationContainer, #dark .infoWrap, #dark .recommendationsContainer {
+    background-color: #0f0f0f;
+    box-shadow: 1px 1px 25px #000000;
+}
+
+#dark .title{
+    color: #ffffff;
+}
+
+#dark .infoText{
+    color: rgba(177, 180, 177, 1);
+}
+
+#dark .MuiButtonBase-root{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#dark .css-s1jfdj-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #505050;
+}
+
+#dark .badge{
+    color: #909690;
+}
+
+#dark .badge:hover{
+    box-shadow: 2px 2px 5px black;
+    color: #a45a0b;
+}
+
+#dark .recommendedItemTitle{
+    color: #909690;
+}
+
+#light .main{
+    background-color: #f0eeee;
+    height: 100vh;
+}
+
+#dark .main{
+    height: 100vh;
+    background-color: #1f1f1f;
+}

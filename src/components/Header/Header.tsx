@@ -56,7 +56,9 @@ const Header = () => {
 
                 <ShowMe/>
 
-                <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
+                <div className={'switchContainer'}>
+                    <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
+                </div>
 
             </div>
         </div>
