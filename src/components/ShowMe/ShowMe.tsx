@@ -14,7 +14,10 @@ const ShowMe = () => {
     const navigate = useNavigate();
 
     const userName = `${me}`;
+    console.log(me);
+
     const firstLetter = userName.slice(0,1).toUpperCase();
+    console.log(firstLetter);
 
     return (
         <div>
