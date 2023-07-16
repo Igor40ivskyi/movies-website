@@ -31,7 +31,7 @@ const LoginForm = () => {
 
                 <form onSubmit={handleSubmit(loginUser)}>
                     <input type="text" placeholder={'email'} {...register('email')}/>
-                    <input type="text" placeholder={'password'} {...register('password')}/>
+                    <input type="password" placeholder={'password'} {...register('password')}/>
                     <button>login</button>
                 </form>
 

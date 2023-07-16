@@ -34,7 +34,7 @@ const RegisterForm = () => {
                 <form onSubmit={handleSubmit(registerUser)}>
                     <input type="text" placeholder={'name'} {...register('name')}/>
                     <input type="text" placeholder={'email'} {...register('email')}/>
-                    <input type="text" placeholder={'password'} {...register('password')}/>
+                    <input type="password" placeholder={'password'} {...register('password')}/>
                     <button>register</button>
                 </form>
 
