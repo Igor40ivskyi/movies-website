@@ -51,7 +51,7 @@ const Header = () => {
 
 
                     <div className={'switchContainer'}>
-                        <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
+                        <ReactSwitch handleDiameter={18} height={20} width={45} onColor={'#9b0d0d'} checked={theme === 'dark'} onChange={toggleTheme}/>
                     </div>
 
                     <ShowMe/>
