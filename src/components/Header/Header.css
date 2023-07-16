@@ -31,6 +31,10 @@
     /*box-shadow: 0.1px 0.1px 0.8px black;*/
 }
 
+.header a:hover{
+    color: #0b40af;
+}
+
 .header a.active{
     /*color: #e30505;*/
 }

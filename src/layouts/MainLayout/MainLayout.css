@@ -94,3 +94,7 @@
 #dark .userName{
     color: #bababa;
 }
+
+#dark a:hover{
+    color: white;
+}
