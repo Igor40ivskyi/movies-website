@@ -15,7 +15,7 @@
     transition: 0.5s;
     display: flex;
     overflow: hidden;
-    border: 2px solid #114899;
+    /*border: 2px solid #114899;*/
 }
 
 .search.active{
