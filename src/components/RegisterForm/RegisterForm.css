@@ -10,7 +10,7 @@
 .formWrap {
     min-height: 400px;
     width: 400px;
-    background-color: silver;
+    background-color: #3150b4;
     border-radius: 5px;
 }
 
@@ -39,8 +39,10 @@
     height: 30px;
     margin: 10px;
     border-radius: 20px;
-    background-color: #2f2d2d;
+    background-color: #184785;
     color: whitesmoke;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .messageBlock {
@@ -48,10 +50,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #000000;
-    font-weight: 600;
+    color: #eee1e1;
+    /*font-weight: 600;*/
     font-size: 22px;
-    font-family: Bahnschrift;
+    font-family: "Times New Roman";
+    padding: 0 20px;
 }
 
 .messageBlock span{
