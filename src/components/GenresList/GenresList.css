@@ -66,6 +66,6 @@ position: relative;
 .listContainer>div:hover{
     /*background-color: #212020;*/
     cursor: pointer;
-    color: #13af1b;
+    color: #0b40af;
     font-weight: 600;
 }

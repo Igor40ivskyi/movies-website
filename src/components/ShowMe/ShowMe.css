@@ -25,7 +25,8 @@
     border-radius: 2px;
     /*border: 2px solid whitesmoke;*/
     font-family: "Microsoft Sans Serif";
-    background-color: #0a2893;
+    background-color: #061c77;
+    box-shadow: 0 0 3px #999999;
     padding: 5px 11px;
     font-weight: 570;
 }
