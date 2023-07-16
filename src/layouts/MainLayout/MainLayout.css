@@ -74,7 +74,7 @@
     font-weight: 1000;
 }
 
-#dark .moviesCategories, #dark .authlist, #dark .result_container{
+#dark .moviesCategories, #dark .authlist, #dark .result_container, #dark .userInfo{
     background-color: #030a1f;
     box-shadow: 1px 1px 15px #000000;
 }
@@ -85,4 +85,8 @@
 
 #dark .byKeywordItem:hover{
     background-color: #a41212;
+}
+
+#dark .userName{
+    color: #bababa;
 }
