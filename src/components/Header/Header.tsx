@@ -12,6 +12,8 @@ import {ShowMovies} from "../ShowMovies/ShowMovies";
 import {Search} from "../Search/Search";
 import {ThemeContext} from "../../App";
 import './Header.css';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import Brightness2RoundedIcon from '@mui/icons-material/Brightness2Rounded';
 
 const Header = () => {
     const {me} = useAppSelector(state => state.authReducer);
@@ -34,6 +36,8 @@ const Header = () => {
     }, [accessToken, dispatch]);
 
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <div className={'headerWrap'}>
 
@@ -51,7 +55,12 @@ const Header = () => {
 
 
                     <div className={'switchContainer'}>
-                        <ReactSwitch handleDiameter={18} height={20} width={45} onColor={'#9b0d0d'} checked={theme === 'dark'} onChange={toggleTheme}/>
+                        <ReactSwitch
+                            checkedIcon={<WbSunnyIcon fontSize={'small'} className={'sunnyIcon'}/>}
+                            uncheckedIcon={<Brightness2RoundedIcon fontSize={'small'} className={'moonIcon'}/>}
+                            handleDiameter={22}
+                            height={20} width={45} onColor={'#161616'} offColor={'#000000'} checked={theme === 'dark'}
+                            onChange={toggleTheme}/>
                     </div>
 
                     <ShowMe/>
