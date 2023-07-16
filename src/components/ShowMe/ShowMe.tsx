@@ -34,7 +34,7 @@ const ShowMe = () => {
                                 authService.removeTokens();
                                 dispatch(authActions.resetMe(1));
                                 navigate('/login');
-                            }}>logout
+                            }}>log out
                             </button>
                         </div>
                     </div>
