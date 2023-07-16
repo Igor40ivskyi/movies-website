@@ -9,6 +9,7 @@ const movieEndpoints = {
     top_ratedMoviesList: '/movie/top_rated',
     upcomingMoviesList: '/movie/upcoming',
     byKeyword: '/search/movie',
+    recommendations: (id: number): string => `/movie/${id}/recommendations`,
 };
 
 export {

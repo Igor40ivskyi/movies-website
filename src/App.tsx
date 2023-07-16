@@ -5,15 +5,15 @@ import {MainLayout} from "./layouts";
 import {LoginPage, RegisterPage} from "./pages";
 import {MoviesPage} from "./pages";
 import {NotFoundPage} from "./pages";
-import {MoviesList} from "./components/MoviesList/MoviesList";
-import {MovieInfo} from "./components/MovieInfo/MovieInfo";
-import {PrivateRoute} from "./utils/router/PrivateRoute";
-import {MoviesListByGenre} from "./components/MoviesListByGenre/MoviesListByGenre";
-import {FindMovies} from "./components/FindMovies/FindMovies";
-import {PopularMoviesList} from "./components/PopularMoviesList/PopularMoviesList";
-import {TopRatedMoviesList} from "./components/TopRatedMoviesList/TopRatedMoviesList";
-import {UpcomingMoviesList} from "./components/UpcomingMoviesList/UpcomingMoviesList";
-import {NowPlayingMoviesList} from "./components/NowPlayingMoviesList/NowPlayingMoviesList";
+import {MoviesList} from "./components";
+import {MovieInfo} from "./components";
+import {PrivateRoute} from "./utils";
+import {MoviesListByGenre} from "./components";
+import {FindMovies} from "./components";
+import {PopularMoviesList} from "./components";
+import {TopRatedMoviesList} from "./components";
+import {UpcomingMoviesList} from "./components";
+import {NowPlayingMoviesList} from "./components";
 
 export const ThemeContext = createContext(null);
 

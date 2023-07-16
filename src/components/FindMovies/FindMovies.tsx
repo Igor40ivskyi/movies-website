@@ -1,8 +1,8 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {findMoviesActions} from "../../redux/slices/findMovies.slice";
-import {IMoviesSortParams} from "../../interfaces/moviesSortParams.interface";
+import {findMoviesActions} from "../../redux";
+import {IMoviesSortParams} from "../../interfaces";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 import './FindMovies.css';
 
@@ -12,7 +12,7 @@ const FindMovies = () => {
 
     const dispatch = useAppDispatch();
 
-    const {register, handleSubmit, reset} = useForm<IMoviesSortParams>();
+    const {register, handleSubmit} = useForm<IMoviesSortParams>();
 
     const save: SubmitHandler<IMoviesSortParams> = (data) => {
         dispatch(findMoviesActions.getSortedMoviesList(data));
@@ -44,11 +44,6 @@ const FindMovies = () => {
                     {sortedMoviesList && sortedMoviesList.map(item => <MoviesListItem key={item.id} movie={item}/>)}
                 </div>
             </div>
-
-            {/*<Container style={{display: 'flex', justifyContent: 'center'}}>*/}
-            {/*    <Pagination color={'primary'} shape={"rounded"} variant={"text"} sx={{marginY: 2}} count={500} page={+page}*/}
-            {/*                onChange={(_, num) => setQuery({page: `${num}`})}/>*/}
-            {/*</Container>*/}
 
         </div>
     );

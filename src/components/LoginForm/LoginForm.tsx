@@ -2,7 +2,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {useNavigate} from "react-router-dom";
 
-import {AuthValidator} from "../../validators/auth.validator";
+import {AuthValidator} from "../../validators";
 import {ILogin} from "../../types";
 import {authActions} from "../../redux";
 import {useAppDispatch} from "../../hooks";
@@ -18,7 +18,7 @@ const LoginForm = () => {
     const navigate = useNavigate();
 
 
-    const loginUser:SubmitHandler<any> = async (user) => {
+    const loginUser:SubmitHandler<ILogin> = async (user) => {
         await dispatch(authActions.login(user));
         navigate('/movies');
         reset();

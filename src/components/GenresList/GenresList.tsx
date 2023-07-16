@@ -1,8 +1,9 @@
-import './GenresList.css';
 import {useEffect} from "react";
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {movieActions} from "../../redux/slices/movie.slice";
 import {useNavigate} from "react-router-dom";
+
+import './GenresList.css';
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
 
 const GenresList = () => {
 
@@ -18,13 +19,18 @@ const GenresList = () => {
     return (
         <div className={'genresContainer'}>
             <div className={'label'}>GENRES</div>
-                <div className={'listContainer'}>
-                        {genresList && genresList.map(genre => <div
-                            onClick={() => navigate(`/movies/by-genre?genreId=${genre.id}&page=1`)}
-                            key={genre.id}>{genre.name}</div>)}
-                </div>
 
+            <div className={'listContainer'}>
+                {genresList && genresList.map(genre =>
 
+                    <div onClick={() => navigate(`/movies/by-genre?genreId=${genre.id}&page=1`)}
+                        key={genre.id}>
+
+                        {genre.name}
+
+                    </div>)}
+
+            </div>
 
         </div>
     );

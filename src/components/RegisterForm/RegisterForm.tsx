@@ -1,8 +1,8 @@
+import {useNavigate} from "react-router-dom";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
-import {useNavigate} from "react-router-dom";
 
-import {AuthValidator} from "../../validators/auth.validator";
+import {AuthValidator} from "../../validators";
 import {useAppDispatch} from "../../hooks";
 import {IRegister} from "../../interfaces";
 import {authActions} from "../../redux";

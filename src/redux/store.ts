@@ -1,8 +1,9 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+
 import {authReducer} from "./slices";
-import {movieReducer} from "./slices/movie.slice";
-import {findMoviesReducer} from "./slices/findMovies.slice";
-import {categoriesReducer} from "./slices/categories.slice";
+import {movieReducer} from "./slices";
+import {findMoviesReducer} from "./slices";
+import {categoriesReducer} from "./slices";
 
 const rootReducer = combineReducers({
     authReducer,

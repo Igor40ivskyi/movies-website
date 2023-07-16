@@ -1,7 +1,8 @@
-.authContainer{
+.authContainer {
     height: 50px;
     width: 120px;
     position: relative;
+    margin-left: 40px;
 }
 
 .authContainer:hover .authLabel{

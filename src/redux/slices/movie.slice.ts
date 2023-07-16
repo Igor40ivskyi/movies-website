@@ -1,11 +1,12 @@
-import {IMovie} from "../../interfaces/movie.interface";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {movieService} from "../../services/movie.service";
 import {AxiosError} from "axios";
-import {IMovieData} from "../../interfaces/movieData.interface";
-import {IMovieInfo} from "../../interfaces/movieInfo.interface";
-import {ITrailer} from "../../interfaces/trailer.interface";
-import {IGenre} from "../../interfaces/genre.interface";
+
+import {IMovie} from "../../interfaces";
+import {movieService} from "../../services";
+import {IMovieData} from "../../interfaces";
+import {IMovieInfo} from "../../interfaces";
+import {ITrailer} from "../../interfaces";
+import {IGenre} from "../../interfaces";
 
 interface IState {
     movies: IMovie[];
@@ -38,7 +39,7 @@ const getMoviesList = createAsyncThunk<IMovieData, { page: string;}>(
     async ({page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getMoviesList(page);
-            return data
+            return data;
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);

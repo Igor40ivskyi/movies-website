@@ -1,6 +1,7 @@
-import './Badge.css'
 import {FC} from "react";
 import {useNavigate} from "react-router-dom";
+
+import './Badge.css'
 
 interface IProps{
     genre:{id:number, name: string;}

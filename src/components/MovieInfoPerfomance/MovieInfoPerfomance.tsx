@@ -3,10 +3,11 @@ import YouTube from "react-youtube";
 import ReactStars from 'react-stars';
 
 import {RecommendationsList} from "../RecommendationsList/RecommendationsList";
-import {IMovieInfo} from "../../interfaces/movieInfo.interface";
-import {ITrailer} from "../../interfaces/trailer.interface";
+import {IMovieInfo} from "../../interfaces";
+import {ITrailer} from "../../interfaces";
 import {Badge} from "../Badge/Badge";
 import './MovieInfoPerfomance.css'
+import {firstHalfOfPoster} from "../../constants";
 
 interface IProps {
     movieInfo: IMovieInfo;
@@ -21,8 +22,7 @@ const MovieInfoPerfomance: FC<IProps> = ({movieInfo, trailer}) => {
     } = movieInfo;
 
 
-    const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
-    let fullPoster_path = `${FirstHalfOfPoster}${backdrop_path}`;
+    let fullPoster_path = `${firstHalfOfPoster}${backdrop_path}`;
 
     if (!backdrop_path) {
         fullPoster_path = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';

@@ -1,8 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IRegister} from "../../interfaces";
 import {AxiosError} from "axios";
+
+import {IRegister} from "../../interfaces";
 import {authService} from "../../services";
-import {IMe} from "../../interfaces/me.interface";
+import {IMe} from "../../interfaces";
 import {ILogin} from "../../types";
 
 interface IState {

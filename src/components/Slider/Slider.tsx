@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
 import {useNavigate} from "react-router-dom";
 
-import {IMovie} from "../../interfaces/movie.interface";
+import {IMovie} from "../../interfaces";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -40,7 +40,6 @@ const Slider: FC<IProps> = ({list}) => {
                 let fullPoster_path = `${FirstHalfOfPoster}${pic}`;
 
                 if (!pic) {
-                    // fullPoster_path = 'https://vet.ge/images/noImageFound.png';
                     fullPoster_path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png';
                 }
 
@@ -51,15 +50,6 @@ const Slider: FC<IProps> = ({list}) => {
                     </div>
                 </SwiperSlide>;
             })}
-
-            {/*{arr.map((item, index) =>*/}
-            {/*    <SwiperSlide key={index}>*/}
-            {/*        <img style={{height: 260, width: '100%'}} src={item} alt="xxx"/>*/}
-            {/*        <div className={'xxx'}>*/}
-            {/*            XXXXXXXXXXXX*/}
-            {/*        </div>*/}
-            {/*    </SwiperSlide>*/}
-            {/*)}*/}
         </Swiper>
     );
 };

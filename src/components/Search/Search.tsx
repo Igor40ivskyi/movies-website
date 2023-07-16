@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-import {movieService} from "../../services/movie.service";
-import {IMovie} from "../../interfaces/movie.interface";
+import {movieService} from "../../services";
+import {IMovie} from "../../interfaces";
+import {firstHalfOfPoster} from "../../constants";
 import './Search.css';
 
 const Search = () => {
@@ -10,11 +11,9 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState<string>('');
     const [byKeywordMovies, setByKeywordMovies] = useState<IMovie[]>([]);
 
-    const firstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
-
     const navigate = useNavigate();
 
-    const handleInputChange = (event: any) => {
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setSearchValue(value);
         movieService.getMoviesByKeyWord(value).then(value => value.data).then(value => setByKeywordMovies(value.results));
@@ -45,21 +44,25 @@ const Search = () => {
             </div>
 
             <div className={'result_container'}>
-                {byKeywordMovies && byKeywordMovies.map(item => <div onClick={()=>{
-                    navigate('/movies/info',
-                        {state:{id: item.id}})
-                    setByKeywordMovies([]);
-                }}
+                {byKeywordMovies && byKeywordMovies.map(item =>
 
-                     className={'byKeywordItem'} key={item.id}>
-                    <div>
-                        <img src={`${firstHalfOfPoster}${item.poster_path}`} alt=""/>
-                        <div className={'byKeywordInfoBlock'}>
-                            <div className={'byKeywordTitle'}>{item.original_title}</div>
-                            <div>{item.release_date}, {item.original_language}</div>
+                    <div onClick={() => {
+                        navigate('/movies/info',
+                            {state: {id: item.id}})
+                        setByKeywordMovies([]);}}
+                         className={'byKeywordItem'} key={item.id}>
+
+                        <div>
+
+                            <img src={`${firstHalfOfPoster}${item.poster_path}`} alt=""/>
+                            <div className={'byKeywordInfoBlock'}>
+                                <div className={'byKeywordTitle'}>{item.original_title}</div>
+                                <div>{item.release_date}, {item.original_language}</div>
+                            </div>
+
                         </div>
-                    </div>
-                </div>)}
+
+                    </div>)}
             </div>
 
         </div>

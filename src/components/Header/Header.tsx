@@ -3,7 +3,7 @@ import jwtDecode from "jwt-decode";
 import ReactSwitch from "react-switch";
 
 import {authService} from "../../services";
-import {useAppDispatch} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {authActions} from "../../redux";
 import {GenresList} from "../GenresList/GenresList";
 import {ShowMe} from "../ShowMe/ShowMe";
@@ -14,6 +14,7 @@ import {ThemeContext} from "../../App";
 import './Header.css';
 
 const Header = () => {
+    const {me} = useAppSelector(state => state.authReducer);
 
     const [, setState] = useState<number>(null);
     const {theme, toggleTheme} = useContext(ThemeContext);
@@ -24,13 +25,13 @@ const Header = () => {
 
     useEffect(() => {
         try {
-            const {name} = jwtDecode<{ name: string;}>(accessToken);
+            const {name} = jwtDecode<{ name: string; }>(accessToken);
             dispatch(authActions.setMe(name));
             setState(1);
-        }catch (e) {
-             setState(0);
+        } catch (e) {
+            setState(0);
         }
-    }, [accessToken]);
+    }, [accessToken, dispatch]);
 
 
     return (
@@ -40,17 +41,21 @@ const Header = () => {
 
                 <ShowAuth/>
 
-                <ShowMovies/>
+                {me && <div className={'contentBlock'}>
 
-                <GenresList/>
+                    <ShowMovies/>
 
-                <Search/>
+                    <GenresList/>
 
-                <ShowMe/>
+                    <Search/>
 
-                <div className={'switchContainer'}>
-                    <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
-                </div>
+
+                    <div className={'switchContainer'}>
+                        <ReactSwitch checked={theme === 'dark'} onChange={toggleTheme}/>
+                    </div>
+
+                    <ShowMe/>
+                </div>}
 
             </div>
         </div>

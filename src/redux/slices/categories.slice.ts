@@ -1,8 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IMovieData} from "../../interfaces/movieData.interface";
-import {movieService} from "../../services/movie.service";
 import {AxiosError} from "axios";
-import {IMovie} from "../../interfaces/movie.interface";
+
+import {IMovieData} from "../../interfaces";
+import {movieService} from "../../services";
+import {IMovie} from "../../interfaces";
 
 interface IState {
     popular_page: number;

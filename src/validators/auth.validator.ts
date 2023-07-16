@@ -1,5 +1,5 @@
 import Joi from "joi";
-import {regexConstants, regexMessages} from "../constants/regexConstants";
+import {regexConstants, regexMessages} from "../constants";
 
 export class AuthValidator {
     public static firstName = Joi.string().min(2).max(50);
@@ -18,9 +18,6 @@ export class AuthValidator {
     static login = Joi.object({
         email: this.email.required(),
         password: this.password.required(),
-
     })
-
-
 }
 

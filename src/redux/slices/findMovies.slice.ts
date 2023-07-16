@@ -1,9 +1,10 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {movieService} from "../../services/movie.service";
-import {IMoviesSortParams} from "../../interfaces/moviesSortParams.interface";
 import {AxiosError} from "axios";
-import {IMovieData} from "../../interfaces/movieData.interface";
-import {IMovie} from "../../interfaces/movie.interface";
+
+import {movieService} from "../../services";
+import {IMoviesSortParams} from "../../interfaces";
+import {IMovieData} from "../../interfaces";
+import {IMovie} from "../../interfaces";
 
 interface IState {
     sortedMoviesList: IMovie[];

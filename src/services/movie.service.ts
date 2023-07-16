@@ -1,9 +1,9 @@
 import {AxiosResponse} from "axios";
 
 import {axiosMovieService} from "./axiosMovie.service";
-import {movieEndpoints} from "../constants/movie.urls";
-import {IMovieData} from "../interfaces/movieData.interface";
-import {IMoviesSortParams} from "../interfaces/moviesSortParams.interface";
+import {movieEndpoints} from "../constants";
+import {IMovieData} from "../interfaces";
+import {IMoviesSortParams} from "../interfaces";
 
 class MovieService {
 
@@ -28,7 +28,6 @@ class MovieService {
     }
 
     getSortedMoviesList(sortParams: IMoviesSortParams): Promise<AxiosResponse> {
-        console.log(sortParams);
         return axiosMovieService.get(movieEndpoints.movies, {params: {...sortParams}});
     }
 
@@ -49,7 +48,7 @@ class MovieService {
     }
 
     getRecommendationsForMovie(id:number):Promise<AxiosResponse>{
-        return axiosMovieService.get(`/movie/${id}/recommendations`);
+        return axiosMovieService.get(movieEndpoints.recommendations(id));
     }
 
     getMoviesByKeyWord(keyWord:string):Promise<AxiosResponse>{

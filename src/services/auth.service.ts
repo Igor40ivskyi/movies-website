@@ -1,19 +1,20 @@
-import {IRegister} from "../interfaces";
 import {AxiosResponse} from "axios";
+import jwtDecode from "jwt-decode";
+
 import {axiosMyBackendService} from "./axios.service";
 import {authEndpoints} from "../constants";
 import {ILogin} from "../types";
-import {ITokens} from "../interfaces/tokens.interface";
-import jwtDecode from "jwt-decode";
-import {IDecoded} from "../interfaces/decoded.interface";
-import {IMe} from "../interfaces/me.interface";
+import {IRegister} from "../interfaces";
+import {ITokens} from "../interfaces";
+import {IDecoded} from "../interfaces";
+import {IMe} from "../interfaces";
 
 class AuthService {
 
     private readonly accessKey = 'access';
     private readonly refreshKey = 'refresh';
 
-    register(user: IRegister): Promise<AxiosResponse<void>> {
+    async register(user: IRegister): Promise<AxiosResponse<void>> {
         return axiosMyBackendService.post(authEndpoints.register, user);
     }
 
@@ -25,7 +26,7 @@ class AuthService {
         return me;
     }
 
-    async me(id: string): Promise<AxiosResponse<any>> {
+    async me(id: string): Promise<AxiosResponse<IMe>> {
         return axiosMyBackendService.get(`${authEndpoints.users}/${id}`);
     }
 

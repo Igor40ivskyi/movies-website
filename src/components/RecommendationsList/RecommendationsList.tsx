@@ -1,5 +1,4 @@
 import {useAppSelector} from "../../hooks";
-
 import {Slider} from "../Slider/Slider";
 import './RecommendationsList.css'
 

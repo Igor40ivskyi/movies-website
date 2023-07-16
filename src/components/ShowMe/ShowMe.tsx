@@ -8,16 +8,12 @@ import './ShowMe.css';
 const ShowMe = () => {
     const {me} = useAppSelector(state => state.authReducer);
 
-    console.log(me);
-
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
     const userName = `${me}`;
-    console.log(me);
 
     const firstLetter = userName.slice(0,1).toUpperCase();
-    console.log(firstLetter);
 
     return (
         <div>

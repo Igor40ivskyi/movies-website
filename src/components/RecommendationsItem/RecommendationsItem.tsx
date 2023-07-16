@@ -1,7 +1,8 @@
 import {FC} from "react";
 import {useNavigate} from "react-router-dom";
 
-import {IMovie} from "../../interfaces/movie.interface";
+import {IMovie} from "../../interfaces";
+import {firstHalfOfPoster} from "../../constants";
 
 interface IProps{
     movie: IMovie;
@@ -13,8 +14,7 @@ const RecommendationsItem: FC<IProps> = ({movie}) => {
 
     const navigate = useNavigate();
 
-    const FirstHalfOfPoster = 'https://image.tmdb.org/t/p/w500';
-    let fullPoster_path = `${FirstHalfOfPoster}${poster_path}`;
+    let fullPoster_path = `${firstHalfOfPoster}${poster_path}`;
 
     if (!poster_path) {
         fullPoster_path = 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';

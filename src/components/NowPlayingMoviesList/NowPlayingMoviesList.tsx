@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {categoriesActions} from "../../redux/slices/categories.slice";
+import {categoriesActions} from "../../redux";
 import {MoviesListItem} from "../MoviesListItem/MoviesListItem";
 
 const NowPlayingMoviesList = () => {

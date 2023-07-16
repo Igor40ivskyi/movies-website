@@ -1,6 +1,7 @@
 import {FC, ReactElement} from "react";
-import {authService} from "../services";
 import {Navigate} from "react-router-dom";
+
+import {authService} from "../services";
 
 interface IProps{
     children: ReactElement;

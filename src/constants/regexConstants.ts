@@ -5,7 +5,7 @@
 
 const regexMessages = {
     EMAIL: 'email must include "@" symbol, example - user@gmail.com',
-    PASSWORD: 'password must icnlude at least one special symbol, one upper case letter and be more than 8 symbols',
+    PASSWORD: 'password must include at least one special symbol, one upper case letter and be more than 8 symbols',
 };
 
  export {
