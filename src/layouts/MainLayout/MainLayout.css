@@ -28,12 +28,12 @@
 }
 
 #dark .MuiButtonBase-root{
-    background-color: #000000;
+    background-color: #060211;
     color: #ffffff;
 }
 
 #dark .css-s1jfdj-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-    background-color: #505050;
+    background-color: #08103d;
 }
 
 #dark .badge{
