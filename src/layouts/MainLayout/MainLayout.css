@@ -58,3 +58,31 @@
     height: 100vh;
     background-color: #1f1f1f;
 }
+
+#dark .listContainer{
+    background-color: #02081c;
+    box-shadow: 1px 1px 15px #000000;
+
+}
+
+#dark .listContainer>div{
+    color: #28a7f3;
+}
+
+#dark .listContainer>div:hover{
+    color: #e8e8e8;
+    font-weight: 1000;
+}
+
+#dark .moviesCategories, #dark .authlist, #dark .result_container{
+    background-color: #030a1f;
+    box-shadow: 1px 1px 15px #000000;
+}
+
+#dark a, #dark .byKeywordInfoBlock {
+    color: #28a7f3;
+}
+
+#dark .byKeywordItem:hover{
+    background-color: #a41212;
+}
